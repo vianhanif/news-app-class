@@ -1,0 +1,17 @@
+<%= simple_form_for(@article) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :author %>
+    <%= f.input :title %>
+    <%= f.input :headline %>
+    <%= f.input :published %>
+    <%= f.input :content, as: :ckeditor, label: false, input_html: { ckeditor: { toolbar: 'maximize' } } %>
+    <%= f.input :tag_list %>
+    <%= f.association :category %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

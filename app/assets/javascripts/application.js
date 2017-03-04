@@ -18,8 +18,8 @@
 //= require bootstrap-datepicker
 //= require jasny-bootstrap.min
 //= require social-share-button
-//= require ckeditor/init
 //= require cocoon
-//= require quill
+//= require select2-full
+//= require ckeditor/init
 //= require_tree ./scripts
 //= require_tree .
