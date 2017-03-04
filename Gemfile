@@ -35,6 +35,32 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'jquery-turbolinks'
+gem 'active_model_serializers'
+# rails generate devise:install
+gem 'devise'
+gem "cocoon"
+gem "font-awesome-rails"
+# gem 'underscore-rails'
+gem 'shareable'
+# gem 'gmaps4rails'
+# gem 'disqus_rails'
+# gem 'pry-rails'
+gem 'social-share-button'
+gem 'bootstrap-sass'
+gem 'bootstrap-datepicker-rails'
+gem 'jasny-bootstrap-rails'
+gem 'will_paginate'
+gem 'simple_form'
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'carrierwave-imageoptimizer'
+gem 'quill-rails5', github: 'paul-at/quill-rails5'
+# gem 'animate-rails'
+gem 'carrierwave-base64'
+# gem 'axlsx_rails'
+gem 'fancybox2-rails'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri

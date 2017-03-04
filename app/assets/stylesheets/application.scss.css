@@ -10,6 +10,18 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require quill.snow
  *= require_tree .
  *= require_self
  */
+
+ @import "bootstrap-sprockets";
+ @import "social-share-button";
+ @import 'bootstrap';
+ @import "fancybox";
+ @import 'bootstrap-datepicker';
+ @import "jquery.fancybox";
+ @import "jquery.fancybox-buttons";
+ @import "jquery.fancybox-thumbs";
+ @import 'jasny-bootstrap';
+ @import "font-awesome";

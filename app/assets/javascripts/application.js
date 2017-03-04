@@ -12,5 +12,14 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+//= require fancybox
+//= require jquery.turbolinks
+//= require bootstrap-sprockets
+//= require bootstrap-datepicker
+//= require jasny-bootstrap.min
+//= require social-share-button
+//= require ckeditor/init
+//= require cocoon
+//= require quill
+//= require_tree ./scripts
 //= require_tree .
