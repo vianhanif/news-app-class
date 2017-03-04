@@ -25,7 +25,8 @@ class VideosController < ApplicationController
   # POST /videos.json
   def create
     @video = Video.new(video_params)
-
+    url = VideoInfo.new @video.url
+    @video.image = url.thumbnail_small
     respond_to do |format|
       if @video.save
         format.html { redirect_to @video, notice: 'Video was successfully created.' }
@@ -64,7 +65,7 @@ class VideosController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_video
-      @video = Video.find(params[:id])
+      @video = Video.friendly.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

@@ -7,7 +7,7 @@
     <%= f.input :headline %>
     <%= f.input :published %>
     <%= f.input :content, as: :ckeditor, label: false, input_html: { ckeditor: { toolbar: 'maximize' } } %>
-    <%= f.input :tag_list %>
+    <%= f.input :tag_list,  collection: ActsAsTaggableOn::Tag.all.order(:name), input_html: { class: 'chosen-select', multiple: 'multiple' }, selected: @article.tag_list %>
     <%= f.association :category %>
   </div>
 

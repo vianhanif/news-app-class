@@ -4,6 +4,7 @@ function init_script() {
   foto_cocoon();
   fancybox();
   datepicker();
+  chosen();
 }
 
 if (typeof Turbolinks != 'undefined') {

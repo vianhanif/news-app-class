@@ -5,7 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-
+ruby '2.3.3'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.2'
 # Use postgresql as the database for Active Record
@@ -61,10 +61,11 @@ gem 'acts-as-taggable-on'
 gem 'carrierwave-base64'
 # gem 'axlsx_rails'
 gem 'fancybox2-rails'
-gem "select2-rails"
+gem 'chosen-rails'
 gem 'listen'
 gem 'friendly_id', '~> 5.1.0'
 gem 'video_info'
+gem 'content_for_in_controllers'
 
 group :development, :test do
   gem 'byebug'
