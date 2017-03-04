@@ -64,6 +64,7 @@ gem 'fancybox2-rails'
 gem "select2-rails"
 gem 'listen'
 gem 'friendly_id', '~> 5.1.0'
+gem 'video_info'
 
 group :development, :test do
   gem 'byebug'
