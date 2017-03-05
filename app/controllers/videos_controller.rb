@@ -4,7 +4,7 @@ class VideosController < ApplicationController
   # GET /videos
   # GET /videos.json
   def index
-    @videos = Video.all
+    @videos = Video.all.paginate(page: params[:page], per_page: 15)
     content_for :title, "Videos"
   end
 
