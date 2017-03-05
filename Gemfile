@@ -67,9 +67,9 @@ gem 'listen'
 gem 'friendly_id', '~> 5.1.0'
 gem 'video_info'
 gem 'content_for_in_controllers'
+gem 'betterlorem'
 
 group :development, :test do
-  gem 'betterlorem'
   gem 'byebug'
   gem 'rspec-rails'
   gem 'faker'
