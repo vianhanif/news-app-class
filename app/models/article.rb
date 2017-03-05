@@ -4,6 +4,10 @@ class Article < ApplicationRecord
   friendly_id :title, use: [:slugged, :finders]
   belongs_to  :category
   mount_base64_uploader :image, PictureUploader
+  validates :title, presence: true
+  validates :author, presence: true
+  validates :published, presence: true
+  validates :category_id, presence: true
   acts_as_taggable
 
   def self.search search

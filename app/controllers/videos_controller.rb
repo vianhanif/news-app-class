@@ -29,8 +29,10 @@ class VideosController < ApplicationController
   # POST /videos.json
   def create
     @video = Video.new(video_params)
-    url = VideoInfo.new @video.url
-    @video.image = url.thumbnail_small
+    if !@video.url.empty?
+      url = VideoInfo.new @video.url
+      @video.image = url.thumbnail_small
+    end
     respond_to do |format|
       if @video.save
         format.html { redirect_to @video, notice: 'Video was successfully created.' }
