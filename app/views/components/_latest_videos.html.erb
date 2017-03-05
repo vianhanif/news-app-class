@@ -10,10 +10,10 @@
               <div class="row">
                 <div class="col-md-12">
                   <div class="text-center">
-                    <a class="various fancybox.iframe" href="https://www.youtube.com/watch?v=qVycBZ8uIQU">
-                      <%
-                        video = VideoInfo.new('https://www.youtube.com/watch?v=qVycBZ8uIQU')
-                      %>
+                    <%
+                      video = VideoInfo.new('https://www.youtube.com/watch?v=qVycBZ8uIQU')
+                    %>
+                    <a class="various fancybox.iframe" href="<%= video.embed_url %>">
                       <div class="video-head-image" style="background-image: url(<%= video.thumbnail_medium %>);"></div>
                     </a>
                   </div>
