@@ -5,20 +5,24 @@ class CategoriesController < ApplicationController
   # GET /categories.json
   def index
     @categories = Category.all
+    content_for :title, "Categories"
   end
 
   # GET /categories/1
   # GET /categories/1.json
   def show
+    content_for :title, @category
   end
 
   # GET /categories/new
   def new
     @category = Category.new
+    content_for :title, "New Category"
   end
 
   # GET /categories/1/edit
   def edit
+    content_for :title, "Edit \"#{@category}\""
   end
 
   # POST /categories

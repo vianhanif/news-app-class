@@ -7,5 +7,12 @@ module ArticlesHelper
       yield(tag, classes[index.round])
     end
   end
-  
+
+  def open_article article
+    year = article.published.strftime("%Y")
+    month = article.published.strftime("%m")
+    date = article.published.strftime("%d")
+    "#{year}/#{month}/#{date}"
+  end
+
 end

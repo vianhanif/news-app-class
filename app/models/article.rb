@@ -10,4 +10,14 @@ class Article < ApplicationRecord
     self.where('title like ?', "%#{search}%")
   end
 
+  def date_published
+    year = self.published.strftime("%Y")
+    month = self.published.strftime("%m")
+    date = self.published.strftime("%-d")
+    day = self.published.strftime("%A")
+    time = self.published.strftime("%I:%M %p")
+    suffix = day.ordinalize
+    "#{day}, #{date}#{suffix} #{month}, #{year}. #{time}"
+  end
+
 end

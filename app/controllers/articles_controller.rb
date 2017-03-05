@@ -5,20 +5,24 @@ class ArticlesController < ApplicationController
   # GET /articles.json
   def index
     @articles = Article.all
+    content_for :title, "Articles"
   end
 
   # GET /articles/1
   # GET /articles/1.json
   def show
+    content_for :title, @article
   end
 
   # GET /articles/new
   def new
     @article = Article.new
+    content_for :title, "New Article"
   end
 
   # GET /articles/1/edit
   def edit
+    content_for :title, "Edit \"#{@article}\""
   end
 
   # POST /articles

@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get 'search/:search', to:'pages#search'
   get 'latest_news', to: 'pages#news'
   get 'latest_videos', to: 'pages#videos'
-  get 'read/:id', to: 'pages#read'
+  get ':year/:month/:date/:id', to: 'pages#read'
   resources :videos
   resources :articles
   resources :categories

@@ -5,20 +5,24 @@ class VideosController < ApplicationController
   # GET /videos.json
   def index
     @videos = Video.all
+    content_for :title, "Videos"
   end
 
   # GET /videos/1
   # GET /videos/1.json
   def show
+    content_for :title, @video
   end
 
   # GET /videos/new
   def new
     @video = Video.new
+    content_for :title, "New Video"
   end
 
   # GET /videos/1/edit
   def edit
+    content_for :title, "Edit \"#{@video}\""
   end
 
   # POST /videos
