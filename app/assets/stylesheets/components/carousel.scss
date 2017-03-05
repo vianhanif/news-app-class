@@ -1,0 +1,46 @@
+.fill-image {
+    height: 40vw;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+}
+
+.carousel-control{
+  background: none !important;
+}
+
+.carousel-caption{
+  height: 100%;
+  width: 100%;
+  left: 0px;
+  bottom: 55%;
+  top: 0px;
+  padding-left: 10%;
+  padding-top: 20px;
+  text-align: left;
+  font-size: 4vw;
+  background: linear-gradient(to bottom right, rgba(54,54,54,.57), rgba(255,255,255,0));
+}
+
+$font-size: 4vw;
+$line-height: 1;
+$lines-to-show: 2;
+
+.caption{
+  width: 90%;
+  left: 0px;
+  display: block; /* Fallback for non-webkit */
+  display: -webkit-box;
+  height: $font-size*$line-height*$lines-to-show; /* Fallback for non-webkit */
+  font-size: $font-size;
+  line-height: $line-height;
+  -webkit-line-clamp: $lines-to-show;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  @media(min-width: 768px){
+    font-size: 25px !important;
+    bottom: 55%;
+  }
+}
