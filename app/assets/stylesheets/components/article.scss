@@ -1,14 +1,15 @@
 .article-head-image{
   height: 140px;
   width: 100%;
+  background-color: rgba(70,70,70,.39);
   background-size:     cover;                      /* <------ */
   background-repeat:   no-repeat;
   background-position: center center;
 }
 
 
-$font-size-head: 18px;
-$line-height-head: 1.8;
+$font-size-head: 15px;
+$line-height-head: 1.4;
 $lines-to-show-head: 3;
 
 

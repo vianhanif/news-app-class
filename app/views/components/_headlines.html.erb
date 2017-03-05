@@ -1,28 +1,24 @@
 <div id="carousel-list" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <li data-target="#carousel-list" data-slide-to="0" class="active"></li>
-    <li data-target="#carousel-list" data-slide-to="1"></li>
-  </ol>
+  <!-- <ol class="carousel-indicators">
+    <% @articles.each_with_index do |article, index| %>
+      <li data-target="#carousel-list" data-slide-to="<%= index %>" class="<%= 'active' if index == 0 %>"></li>
+      <li data-target="#carousel-list" data-slide-to="<%= index %>"></li>
+    <% end %>
+  </ol> -->
 
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
-    <div class="item active">
-      <div class="fill-image" style="background-image:    url(<%= image_path 'bg.png' %>);"></div>
-      <div class="carousel-caption">
-        <div class="carousel-caption-text">
-          <%= BetterLorem.w(30, true, false) %>
+    <% @articles.each_with_index do |article, index| %>
+      <div class="item <%= 'active' if index == 0 %>">
+        <div class="fill-image" style="background-image:    url(<%= article.image.url if !article.image.to_s.empty? %>);"></div>
+        <div class="carousel-caption">
+          <div class="carousel-caption-text">
+            <%= article.title %>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="item">
-      <div class="fill-image" style="background-image:    url(<%= image_path 'bg.png' %>);"></div>
-      <div class="carousel-caption">
-        <div class="carousel-caption-text">
-          <%= BetterLorem.w(30, true, false) %>
-        </div>
-      </div>
-    </div>
+    <% end %>
   </div>
 
   <!-- Controls -->

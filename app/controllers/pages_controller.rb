@@ -34,7 +34,7 @@ class PagesController < ApplicationController
   private
 
     def set_articles_and_videos
-      @articles = Article.all
+      @articles = Article.all.paginate(page: params[:page], per_page: 6)
       @videos = Video.all
     end
 
