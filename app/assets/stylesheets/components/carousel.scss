@@ -50,3 +50,9 @@ $lines-to-show: 2;
     height: 4vw;
   }
 }
+
+.carousel-inner{
+  > .item{
+    transition: none;
+  }
+}
