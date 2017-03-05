@@ -34,7 +34,7 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
+gem 'non-stupid-digest-assets', '~> 1.0.4'
 gem 'jquery-turbolinks'
 gem 'active_model_serializers'
 # rails generate devise:install
