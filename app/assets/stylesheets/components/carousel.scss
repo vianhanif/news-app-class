@@ -1,9 +1,12 @@
 .fill-image {
-    height: 40vw;
-    background-position: center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
+  height: 250px;
+  width: 100%;
+  background-size:     cover;                      /* <------ */
+  background-repeat:   no-repeat;
+  background-position: center center;
+  @media(max-width: 768px){
+    height: 180px;
+  }
 }
 
 .carousel-control{

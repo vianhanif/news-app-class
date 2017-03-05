@@ -27,19 +27,51 @@
     }
     .active{
       &.left{
-        left:-33%;
 				opacity: .0;
+        @media(max-width: 768px){
+          left:-100% !important;
+        }
+        @media(max-width: 1000px){
+          left:-50%;
+        }
+        @media(min-width: 1000px){
+          left:-33%;
+        }
       }
       &.right{
-        left:33%;
 				opacity: .0;
+        @media(max-width: 768px){
+          left:100% !important;
+        }
+        @media(max-width: 1000px){
+          left:50%;
+        }
+        @media(min-width: 1000px){
+          left:33%;
+        }
       }
     }
     .next{
-      left: 33%;
+      @media(max-width: 768px){
+        left:100% !important;
+      }
+      @media(max-width: 1000px){
+        left:50%;
+      }
+      @media(min-width: 1000px){
+        left:33%;
+      }
     }
     .prev{
-      left: -33%;
+      @media(max-width: 768px){
+        left:-100% !important;
+      }
+      @media(max-width: 1000px){
+        left:-50%;
+      }
+      @media(min-width: 1000px){
+        left:-33%;
+      }
     }
     @media all and (transform-3d), (-webkit-transform-3d) {
       > .item{
