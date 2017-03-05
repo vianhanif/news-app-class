@@ -1,0 +1,45 @@
+.article-head-image{
+  height: 140px;
+  width: 100%;
+  background-size:     cover;                      /* <------ */
+  background-repeat:   no-repeat;
+  background-position: center center;
+}
+
+
+$font-size-head: 18px;
+$line-height-head: 1.8;
+$lines-to-show-head: 3;
+
+
+$font-size-text: 16px;
+$line-height-text: 1.3;
+$lines-to-show-text: 6;
+
+.thumbnail-head{
+  width: 100%;
+  left: 0px;
+  display: block; /* Fallback for non-webkit */
+  display: -webkit-box;
+  height: $font-size-head*$line-height-head*$lines-to-show-head; /* Fallback for non-webkit */
+  font-size: $font-size-head;
+  line-height: $line-height-head;
+  -webkit-line-clamp: $lines-to-show-head;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.thumbnail-text{
+  width: 100%;
+  left: 0px;
+  display: block; /* Fallback for non-webkit */
+  display: -webkit-box;
+  height: $font-size-text*$line-height-text*$lines-to-show-text; /* Fallback for non-webkit */
+  font-size: $font-size-text;
+  line-height: $line-height-text;
+  -webkit-line-clamp: $lines-to-show-text;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

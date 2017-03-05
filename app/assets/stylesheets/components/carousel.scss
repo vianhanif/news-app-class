@@ -27,12 +27,12 @@ $font-size: 4vw;
 $line-height: 1;
 $lines-to-show: 2;
 
-.caption{
+.carousel-caption-text{
   width: 90%;
   left: 0px;
   display: block; /* Fallback for non-webkit */
   display: -webkit-box;
-  height: $font-size*$line-height*$lines-to-show; /* Fallback for non-webkit */
+  height: 50px; /* Fallback for non-webkit */
   font-size: $font-size;
   line-height: $line-height;
   -webkit-line-clamp: $lines-to-show;
@@ -42,5 +42,8 @@ $lines-to-show: 2;
   @media(min-width: 768px){
     font-size: 25px !important;
     bottom: 55%;
+  }
+  @media(max-width: 768px){
+    height: 4vw;
   }
 }

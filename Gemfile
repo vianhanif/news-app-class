@@ -68,6 +68,7 @@ gem 'video_info'
 gem 'content_for_in_controllers'
 
 group :development, :test do
+  gem 'betterlorem'
   gem 'byebug'
   gem 'rspec-rails'
   gem 'faker'
