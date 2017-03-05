@@ -14,5 +14,6 @@ module NewsApp
 
 
     # config.action_dispatch.default_headers.merge!({'X-Frame-Options' => 'ALLOWALL'})
+    config.autoload_paths << Rails.root.join('lib')
   end
 end
