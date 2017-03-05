@@ -1,0 +1,12 @@
+<div class="form-group col-sm-<%= width %> col-md-<%= width %>">
+  <label><%= caption %></label>
+  <div class="form-group">
+    <fieldset class="rating">
+      <%= form.radio_button(name, 5) %> <%= form.label(name.to_s + "_5") %>
+      <%= form.radio_button(name, 4) %> <%= form.label(name.to_s + "_4") %>
+      <%= form.radio_button(name, 3) %> <%= form.label(name.to_s + "_3") %>
+      <%= form.radio_button(name, 2) %> <%= form.label(name.to_s + "_2") %>
+      <%= form.radio_button(name, 1) %> <%= form.label(name.to_s + "_1") %>
+    </fieldset>
+  </div>
+</div>

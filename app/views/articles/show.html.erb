@@ -1,39 +1,58 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Author:</strong>
-  <%= @article.author %>
-</p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @article.title %>
-</p>
-
-<p>
-  <strong>Headline:</strong>
-  <%= @article.headline %>
-</p>
-
-<p>
-  <strong>Published:</strong>
-  <%= @article.published %>
-</p>
-
-<p>
-  <strong>Content:</strong>
-  <%= @article.content %>
-</p>
-
-<p>
-  <strong>Category:</strong>
-  <%= @article.category %>
-</p>
-
-<p>
-  <strong>Tags:</strong>
-  <%= @article.tag_list %>
-</p>
-
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>
+<div class="row">
+  <div class="col-sm-10 col-sm-offset-1">
+    <%= render 'components/alert', notice: notice %>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <ul class="list-inline">
+          <li><label class="table-head-panel"><%= @article.title %></label></li>
+          <li class="pull-right">
+            <ul class="list-inline">
+              <li><%= link_to 'Edit', edit_article_path(@article), class: 'btn btn-primary' %></li>
+              <li><%= link_to 'Back', articles_path, class: 'btn btn-primary' %></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-sm-7">
+            <div class="view-image-container">
+              <%= image_tag (@article.image.url || image_path('default.png') ), class: 'view-image' %>
+            </div>
+          </div>
+          <div class="col-sm-5">
+            <ul class="list-unstyled">
+              <li>
+                <h4>Headling</h4>
+                <%= @article.headline %>
+              </li>
+              <li>
+                <h4>Author</h4>
+                <%= @article.author %>
+              </li>
+              <li>
+                <h4>Category</h4>
+                <%= @article.category.name %>
+              </li>
+              <li>
+                <h4>Published</h4>
+                <%= @article.date_published %>
+              </li>
+              <li>
+                <h4>Tags</h4>
+                <%= @article.tag_list %>
+              </li>
+            </ul>
+          </div>
+          <div class="col-sm-12">
+            <div class="panel panel-default">
+              <div class="panel-body content-container">
+                <%= @article.content.html_safe %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

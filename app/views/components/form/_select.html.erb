@@ -1,0 +1,8 @@
+<div class="form-group col-sm-<%= width %> col-md-<%= width %>">
+  <label><%= caption %></label>
+  <% if selected != nil %>
+  <%= form.association name, label_method: select, label:false, value_method: default, selected: selected, prompt: "Pilih...", disabled: disabled %>
+  <% else %>
+  <%= form.association name, label_method: select, label:false, value_method: default, value: value, prompt: "Pilih...", disabled: disabled %>
+  <% end %>
+</div>

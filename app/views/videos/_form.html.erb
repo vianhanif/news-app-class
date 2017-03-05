@@ -1,12 +1,27 @@
 <%= simple_form_for(@video) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :title %>
-    <%= f.input :url %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <%= render 'components/error', form: @video %>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <ul class="list-inline table-heading">
+        <li><label class="table-head-panel"><%= action_name.to_s.capitalize %> Video</label></li>
+        <li class="pull-right">
+          <ul class="list-inline">
+            <% if action_name == 'edit' %>
+             <li><%= link_to 'Show', @video, class: 'btn btn-primary' %></li>
+             <% end %>
+            <li><%= link_to 'Back', videos_path, class: 'btn btn-primary' %></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-sm-6"><%= f.input :title %></div>
+        <div class="col-sm-6"><%= f.input :url %></div>
+      </div>
+    </div>
+    <div class="panel-footer text-right">
+      <%= f.button :submit %>
+    </div>
   </div>
 <% end %>

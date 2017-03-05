@@ -1,17 +1,49 @@
 <%= simple_form_for(@article) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :author %>
-    <%= f.input :title %>
-    <%= f.input :headline %>
-    <%= f.input :published %>
-    <%= f.input :content, as: :ckeditor, label: false, input_html: { ckeditor: { toolbar: 'maximize' } } %>
-    <%= f.input :tag_list,  collection: ActsAsTaggableOn::Tag.all.order(:name), input_html: { class: 'chosen-select', multiple: 'multiple' }, selected: @article.tag_list %>
-    <%= f.association :category %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <%= render 'components/error', form: @article %>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <ul class="list-inline table-heading">
+        <li><label class="table-head-panel"><%= action_name.to_s.capitalize %> Article</label></li>
+        <li class="pull-right">
+          <ul class="list-inline">
+            <% if action_name == 'edit' %>
+             <li><%= link_to 'Show', @article, class: 'btn btn-primary' %></li>
+             <% end %>
+            <li><%= link_to 'Back', articles_path, class: 'btn btn-primary' %></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-4">
+          <%= render('components/form/input', form: f, data: @article.image.url || image_url('default.png'), width: 12, caption: 'Image', name: :image, type: 'image'); %>
+        </div>
+        <div class="col-md-8">
+          <div class="row">
+            <div class="col-sm-9"><%= f.input :title %></div>
+            <div class="col-sm-3">
+              <%= f.association :category, selected: :category %>
+            </div>
+            <div class="col-sm-4"><%= f.input :author %></div>
+            <div class="col-sm-3">
+              <%= f.input :published, input_html: {class: 'datepicker'}, as: 'string', html5: true %>
+            </div>
+            <div class="col-sm-3">
+              <%= f.input :tag_list, input_html: {value: (@article.tag_lists || '')} %>
+            </div>
+            <div class="col-sm-12">
+              <%= f.input :headline %>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12">
+          <%= f.input :content, as: :ckeditor, label: false, input_html: { ckeditor: { toolbar: 'maximize' } } %>
+        </div>
+      </div>
+    </div>
+    <div class="panel-footer text-right">
+      <%= f.button :submit %>
+    </div>
   </div>
 <% end %>

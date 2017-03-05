@@ -1,0 +1,8 @@
+<div class="form-group col-sm-<%= width %> col-md-<%= width %>">
+  <label><%= caption %></label>
+  <% if value %>
+    <%= form.input name, label:false, placeholder: placeholder, input_html: {value: value} %>
+  <% else %>
+    <%= form.input name, label:false, placeholder: placeholder %>
+  <% end %>
+</div>

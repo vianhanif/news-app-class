@@ -11,7 +11,7 @@ class CategoriesController < ApplicationController
   # GET /categories/1
   # GET /categories/1.json
   def show
-    content_for :title, @category
+    content_for :title, @category.name
   end
 
   # GET /categories/new
@@ -22,7 +22,7 @@ class CategoriesController < ApplicationController
 
   # GET /categories/1/edit
   def edit
-    content_for :title, "Edit \"#{@category}\""
+    content_for :title, "Edit \"#{@category.name}\""
   end
 
   # POST /categories

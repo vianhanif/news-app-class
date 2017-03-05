@@ -1,0 +1,51 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid navbar-flex">
+
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse-menu" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">
+        <%= image_tag "logo.png", alt: "Brand" %>
+      </a>
+    </div>
+
+    <div class="nav navbar-right navbar-head-menu">
+      <div class="pull-right">
+        <ul class="list-inline head-list">
+          <li class="navbar-form-container">
+            <form class="navbar-form" role="search">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search">
+              </div>
+              <button type="submit" class="btn btn-hidden">Submit</button>
+            </form>
+          </li>
+          <li class="navbar-icons-container">
+            <ul class="list-inline navbar-icons">
+              <li><%= link_to "", "#", class: 'fa fa-google-plus' %></li>
+              <li><%= link_to "", "#", class: 'fa fa-youtube-play' %></li>
+              <li><%= link_to "", "#", class: 'fa fa-instagram' %></li>
+              <li><%= link_to "", "#", class: 'fa fa-linkedin' %></li>
+              <li><%= link_to "", "#", class: 'fa fa-linkedin' %></li>
+              <li><%= link_to "", "#", class: 'fa fa-linkedin' %></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+  <div class="container-fluid navbar-flex-center">
+    <div class="collapse navbar-collapse" id="collapse-menu">
+      <ul class="nav navbar-nav text-center">
+        <li><%= link_to "Articles", articles_path %></li>
+        <li><%= link_to "Categories", categories_path %></li>
+        <li><%= link_to "Videos", videos_path %></li>
+      </ul>
+    </div>
+  </div>
+</nav>

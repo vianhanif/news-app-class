@@ -62,7 +62,7 @@ gem 'acts-as-taggable-on'
 gem 'carrierwave-base64'
 # gem 'axlsx_rails'
 gem 'fancybox2-rails'
-gem 'chosen-rails'
+gem "selectize-rails"
 gem 'listen'
 gem 'friendly_id', '~> 5.1.0'
 gem 'video_info'

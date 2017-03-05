@@ -12,12 +12,15 @@ class Article < ApplicationRecord
 
   def date_published
     year = self.published.strftime("%Y")
-    month = self.published.strftime("%m")
-    date = self.published.strftime("%-d")
+    month = self.published.strftime("%B")
+    date = self.published.strftime("%e")
     day = self.published.strftime("%A")
     time = self.published.strftime("%I:%M %p")
-    suffix = day.ordinalize
-    "#{day}, #{date}#{suffix} #{month}, #{year}. #{time}"
+    "#{day}, #{date} #{month}, #{year}. #{time}"
+  end
+
+  def tag_lists
+    self.tag_list.join(", ")
   end
 
 end

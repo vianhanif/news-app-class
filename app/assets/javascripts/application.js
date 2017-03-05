@@ -19,7 +19,7 @@
 //= require jasny-bootstrap.min
 //= require social-share-button
 //= require cocoon
-//= require chosen-jquery
+//= require selectize
 //= require ckeditor/init
 //= require_tree ./scripts
 //= require_tree .

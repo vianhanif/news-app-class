@@ -1,0 +1,25 @@
+<div class="col-sm-<%= width %> col-md-<%= width %> col-lg-<%= width %>">
+  <label class="form-image-caption"><%= caption %></label>
+  <div class="fileinput fileinput-new" data-provides="fileinput" style="width: 100%;">
+    <div class="fileinput-new thumbnail" style="width: 100%; min-height: 200px; background: url('<%= data %>') no-repeat center; background-size: auto <%= data.include?('default') ? '100px' : '300px' %>">
+    </div>
+    <div class="fileinput-preview fileinput-exists thumbnail" style="width: inherit; height: 200px;"></div>
+    <div class="text-center">
+      <div class="row">
+        <div class="col-sm-12 col-md-12">
+          <div class="col-sm-6 col-md-6">
+            <!-- test -->
+            <span class="btn btn-default btn-secondary btn-file btn-image-upload">
+              <span class="fileinput-new"><%= data == image_url('default.png') ? 'Pilih' : 'Ubah' %></span>
+              <span class="fileinput-exists">Ubah</span>
+              <%= form.input_field name, label:false, value: data || '' %>
+            </span>
+          </div>
+          <div class="col-sm-6 col-md-6">
+            <a href="#" class="btn btn-default btn-secondary btn-image-upload fileinput-exists" data-dismiss="fileinput">Cancel</a>
+          </div>
+    </div>
+    </div>
+    </div>
+  </div>
+</div>

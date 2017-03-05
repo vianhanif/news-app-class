@@ -11,7 +11,7 @@ class VideosController < ApplicationController
   # GET /videos/1
   # GET /videos/1.json
   def show
-    content_for :title, @video
+    content_for :title, @video.title
   end
 
   # GET /videos/new
@@ -22,7 +22,7 @@ class VideosController < ApplicationController
 
   # GET /videos/1/edit
   def edit
-    content_for :title, "Edit \"#{@video}\""
+    content_for :title, "Edit \"#{@video.title}\""
   end
 
   # POST /videos
@@ -74,6 +74,6 @@ class VideosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def video_params
-      params.require(:video).permit(:url, :title)
+      params.require(:video).permit(:url, :title, :image)
     end
 end

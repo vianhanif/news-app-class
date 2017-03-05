@@ -10,7 +10,8 @@
 
   <body>
     <div class="container">
-      <%= render 'components/navbar' %>
+      <%= render 'components/navbar' if controller_name == 'pages' %>
+      <%= render 'components/navbar_auth' if controller_name != 'pages' %>
       <%= yield %>
     </div>
   </body>

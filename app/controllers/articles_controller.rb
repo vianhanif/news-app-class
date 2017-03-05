@@ -11,7 +11,7 @@ class ArticlesController < ApplicationController
   # GET /articles/1
   # GET /articles/1.json
   def show
-    content_for :title, @article
+    content_for :title, @article.title
   end
 
   # GET /articles/new
@@ -22,7 +22,7 @@ class ArticlesController < ApplicationController
 
   # GET /articles/1/edit
   def edit
-    content_for :title, "Edit \"#{@article}\""
+    content_for :title, "Edit \"#{@article.title}\""
   end
 
   # POST /articles
