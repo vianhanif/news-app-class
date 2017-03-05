@@ -26,7 +26,7 @@
             <tbody>
               <% @articles.each do |article| %>
                 <tr>
-                  <td><%= article.category.name || '' %></td>
+                  <td><%= article.category.name %></td>
                   <td><%= article.author %></td>
                   <td><%= article.title %></td>
                   <td><%= article.date_published %></td>
