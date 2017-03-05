@@ -13,6 +13,6 @@ module NewsApp
     # -- all .rb files in that directory are automatically loaded.
 
 
-    config.action_dispatch.default_headers.merge!({'X-Frame-Options' => 'ALLOWALL'})
+    # config.action_dispatch.default_headers.merge!({'X-Frame-Options' => 'ALLOWALL'})
   end
 end

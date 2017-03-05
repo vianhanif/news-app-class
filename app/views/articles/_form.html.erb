@@ -17,7 +17,9 @@
     <div class="panel-body">
       <div class="row">
         <div class="col-md-4">
-          <%= render('components/form/input', form: f, data: @article.image.url || image_url('default.png'), width: 12, caption: 'Image', name: :image, type: 'image'); %>
+          <div class="row">
+            <%= render('components/form/input', form: f, data: @article.image.url || image_url('default.png'), width: 12, caption: 'Image', name: :image, type: 'image'); %>
+          </div>
         </div>
         <div class="col-md-8">
           <div class="row">

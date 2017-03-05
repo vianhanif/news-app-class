@@ -3,15 +3,19 @@
     <%= render 'components/alert', notice: notice %>
     <div class="panel panel-default">
       <div class="panel-heading">
-        <ul class="list-inline">
-          <li><label class="table-head-panel"><%= @article.title %></label></li>
-          <li class="pull-right">
-            <ul class="list-inline">
-              <li><%= link_to 'Edit', edit_article_path(@article), class: 'btn btn-primary' %></li>
-              <li><%= link_to 'Back', articles_path, class: 'btn btn-primary' %></li>
-            </ul>
-          </li>
-        </ul>
+        <div class="row">
+          <div class="col-xs-8">
+            <label class="table-head-panel"><%= @article.title %></label>
+          </div>
+          <div class="col-xs-4">
+            <div class="text-right">
+              <ul class="list-inline">
+                <li><%= link_to 'Edit', edit_article_path(@article), class: 'btn btn-primary' %></li>
+                <li><%= link_to 'Back', articles_path, class: 'btn btn-primary' %></li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="panel-body">
         <div class="row">
