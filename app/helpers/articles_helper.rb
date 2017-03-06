@@ -15,4 +15,8 @@ module ArticlesHelper
     "#{year}/#{month}/#{date}"
   end
 
+  def pick_path article
+    "pick/#{article.id}"
+  end
+
 end

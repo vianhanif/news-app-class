@@ -9,7 +9,7 @@
 
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
-    <% @articles.each_with_index do |article, index| %>
+    <% @picked_articles.each_with_index do |article, index| %>
       <div class="item <%= 'active' if index == 0 %>">
         <div class="fill-image" style="background-image:    url(<%= article.image.url if !article.image.to_s.empty? %>);"></div>
         <div class="carousel-caption">

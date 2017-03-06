@@ -1,11 +1,24 @@
 class ArticlesController < ApplicationController
-  before_action :set_article, only: [:show, :edit, :update, :destroy]
+  before_action :set_article, only: [:show, :edit, :update, :destroy, :pick]
 
   # GET /articles
   # GET /articles.json
   def index
     @articles = Article.all.paginate(page: params[:page], per_page: 20)
     content_for :title, "Articles"
+  end
+
+  def pick
+    @article.pick = !@article.pick
+    if @article.save
+      respond_to do |format|
+        format.html { redirect_to articles_path, notice: 'Article was successfully updated.' }
+      end
+    else
+      respond_to do |format|
+        format.html { redirect_to articles_path, notice: 'Article update failed.' }
+      end
+    end
   end
 
   # GET /articles/1
@@ -73,6 +86,6 @@ class ArticlesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def article_params
-      params.require(:article).permit(:author, :title, :image, :headline, :published, :content, :category_id, :tag_list)
+      params.require(:article).permit(:pick, :author, :title, :image, :headline, :published, :content, :category_id, :tag_list)
     end
 end

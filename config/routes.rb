@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'latest_news', to: 'pages#news'
   get 'latest_videos', to: 'pages#videos'
   get ':year/:month/:date/:id', to: 'pages#read'
+  get 'pick/:id', to: 'articles#pick'
   resources :videos
   resources :articles
   resources :categories
