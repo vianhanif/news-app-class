@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170306052245) do
+ActiveRecord::Schema.define(version: 20170306105714) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -63,6 +63,13 @@ ActiveRecord::Schema.define(version: 20170306052245) do
     t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
   end
 
+  create_table "roles", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "level"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "taggings", force: :cascade do |t|
     t.integer  "tag_id"
     t.string   "taggable_type"
@@ -88,6 +95,19 @@ ActiveRecord::Schema.define(version: 20170306052245) do
     t.index ["name"], name: "index_tags_on_name", unique: true, using: :btree
   end
 
+  create_table "users", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "image"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "password_digest"
+    t.integer  "role_id"
+    t.boolean  "approve"
+    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
+    t.index ["role_id"], name: "index_users_on_role_id", using: :btree
+  end
+
   create_table "videos", force: :cascade do |t|
     t.string   "url"
     t.datetime "created_at", null: false
@@ -99,4 +119,5 @@ ActiveRecord::Schema.define(version: 20170306052245) do
   end
 
   add_foreign_key "articles", "categories"
+  add_foreign_key "users", "roles"
 end

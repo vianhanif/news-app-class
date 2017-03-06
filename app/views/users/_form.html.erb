@@ -1,0 +1,41 @@
+<%= simple_form_for(@user) do |f| %>
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+      <%= render 'shared/error_messages', form: @user %>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4><%= action_name.to_s.capitalize %> User</h4>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="row">
+                <%= render('components/form/input', form: f, data: (@user.image.url || image_url('default.png')), width: 12, caption: 'Image', name: :image, type: 'image'); %>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <%= f.input :name %>
+              <%= f.input :email %>
+              <%= f.association :role, selected: :role %>
+              <% if action_name == 'new' or action_name == 'create' %>
+                <%= f.input :password %>
+                <%= f.input :password_confirmation %>
+              <% else %>
+                <%= f.input :password, value: :password %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+        <div class="panel-footer">
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="text-right">
+                <%= f.button :submit, "Submit" %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

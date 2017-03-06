@@ -15,9 +15,9 @@
       <div class="pull-right">
         <ul class="list-inline head-list">
           <li class="navbar-form-container">
-            <form class="navbar-form" role="search">
+            <form class="navbar-form" role="search" action="/lookup" method="get">
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Search">
+                <input type="text" name="search" class="form-control" placeholder="Search">
               </div>
               <button type="submit" class="btn btn-hidden">Submit</button>
             </form>
@@ -43,6 +43,11 @@
         <li><%= link_to "Articles", articles_path %></li>
         <li><%= link_to "Categories", categories_path %></li>
         <li><%= link_to "Videos", videos_path %></li>
+        <li><%= link_to "Roles", roles_path %></li>
+        <% if user_signed_in? %>
+        <li><%= link_to current_user.email, current_user %></li>
+        <li><%= link_to "Log out", log_out_path, method: :delete %></li>
+        <% end %>
       </ul>
     </div>
   </div>

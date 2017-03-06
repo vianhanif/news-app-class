@@ -19,23 +19,27 @@
                 <th>Author</th>
                 <th>Title</th>
                 <th>Published</th>
-                <th>Picked</th>
+                <% if current_user.approve? %>
                 <th colspan="4"></th>
+                <% end %>
               </tr>
             </thead>
 
             <tbody>
               <% @articles.each do |article| %>
-                <tr>
+                <tr class="<%= 'success' if article.pick %>">
                   <td><%= article.category.name %></td>
                   <td><%= article.author %></td>
                   <td><%= "#{article.title[0..30]}..." %></td>
                   <td><%= article.date_published %></td>
-                  <td><%= article.pick ? 'True' : '' %></td>
+                  <% if current_user.approve? %>
                   <td><%= link_to (!article.pick ? 'Pick' : 'Revert'), pick_path(article) %></td>
                   <td><%= link_to 'Show', article %></td>
                   <td><%= link_to 'Edit', edit_article_path(article) %></td>
                   <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                  <% else %>
+                  <td><%= link_to 'Show', article %></td>
+                  <% end %>
                 </tr>
               <% end %>
             </tbody>
@@ -45,7 +49,9 @@
     </div>
     <div class="row">
       <div class="col-md-12">
-        <%= will_paginate @articles%>
+        <div class="text-center">
+          <%= will_paginate @articles%>
+        </div>
       </div>
     </div>
   </div>

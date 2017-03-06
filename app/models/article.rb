@@ -1,6 +1,6 @@
 class Article < ApplicationRecord
   extend FriendlyId
-  default_scope { order('published DESC') }
+  default_scope { order('published DESC, pick ASC') }
   friendly_id :title, use: [:slugged, :finders]
   belongs_to  :category
   mount_base64_uploader :image, PictureUploader

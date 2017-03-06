@@ -1,0 +1,39 @@
+<%= simple_form_for(@user, url: sign_up_path) do |f| %>
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+      <%= render 'shared/error_messages', form: @user %>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4>Sign Up</h4>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="row">
+                <%= render('components/form/input', form: f, data: image_url('default.png'), width: 12, caption: 'Image', name: :image, type: 'image'); %>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <%= f.input :name %>
+              <%= f.input :email %>
+              <%= f.input :password %>
+              <%= f.input :password_confirmation %>
+            </div>
+          </div>
+        </div>
+        <div class="panel-footer">
+          <div class="row">
+            <div class="col-xs-8">
+               <%= link_to "Log In", log_in_path %>
+            </div>
+            <div class="col-xs-4">
+              <div class="text-right">
+                <%= f.button :submit, "Sign Up" %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

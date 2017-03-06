@@ -16,7 +16,9 @@
             <thead>
               <tr>
                 <th>Name</th>
+                <% if current_user.approve? %>
                 <th colspan="2"></th>
+                <% end %>
               </tr>
             </thead>
 
@@ -24,9 +26,10 @@
               <% @categories.each do |category| %>
                 <tr>
                   <td><%= category.name %></td>
-                  <td><%= category.pick ? 'True' : '' %></td>
+                  <% if current_user.approve? %>
                   <td><%= link_to 'Edit', edit_category_path(category) %></td>
                   <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                  <% end %>
                 </tr>
               <% end %>
             </tbody>
@@ -36,7 +39,9 @@
     </div>
     <div class="row">
       <div class="col-md-12">
-        <%= will_paginate @categories%>
+        <div class="text-center">
+          <%= will_paginate @categories%>
+        </div>
       </div>
     </div>
   </div>

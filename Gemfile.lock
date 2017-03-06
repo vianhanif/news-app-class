@@ -424,6 +424,7 @@ PLATFORMS
 DEPENDENCIES
   active_model_serializers
   acts-as-taggable-on
+  bcrypt (= 3.1.11)
   betterlorem
   bootstrap-datepicker-rails
   bootstrap-sass

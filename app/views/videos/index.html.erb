@@ -16,16 +16,27 @@
             <thead>
               <tr>
                 <th>Title</th>
+                <% if current_user.approve? %>
                 <th colspan="2"></th>
+                <% end %>
               </tr>
             </thead>
 
             <tbody>
               <% @videos.each do |video| %>
                 <tr>
-                  <td><%= video.title %></td>
+                  <%
+                    video_new = VideoInfo.new(video.url)
+                  %>
+                  <td>
+                    <a class="various fancybox.iframe" href="<%= video_new.embed_url || video.url %>">
+                      <%= video.title %>
+                    </a>
+                  </td>
+                  <% if current_user.approve? %>
                   <td><%= link_to 'Edit', edit_video_path(video) %></td>
                   <td><%= link_to 'Destroy', video, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                  <% end %>
                 </tr>
               <% end %>
             </tbody>
