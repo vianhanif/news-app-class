@@ -1,3 +1,4 @@
+<% if !@articles.empty? %>
 <h3>Latest Posts</h3>
 <div class="row">
   <% @articles.each do |article| %>
@@ -17,3 +18,4 @@
 <div class="text-center">
   <%= will_paginate @articles %>
 </div>
+<% end %>
