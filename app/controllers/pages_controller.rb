@@ -1,21 +1,25 @@
 class PagesController < ApplicationController
-  before_action :set_articles_and_videos, only: [:index, :news, :videos]
+  before_action :set_articles_and_videos, only: [:news, :videos]
   before_action :set_article, only: [:read]
 
   def index
+    @articles = Article.all.paginate(page: params[:page], per_page: 6)
+    @videos = Video.all
     content_for :title, "News and Videos"
   end
 
   def search
     if params[:search]
       unless params[:search].empty?
-        @articles_by_tag = Article.tagged_with params[:search]
+        @articles_by_tag = Article.tagged_with(params[:search])
         @articles_by_title = Article.search params[:search]
         @videos_by_title = Video.search params[:search]
+      else
+        redirect_to root_path
       end
       content_for :title, "Search for \"#{params[:search]}\""
     else
-      redirect_to pages_index
+      redirect_to root_path
     end
   end
 
@@ -34,8 +38,8 @@ class PagesController < ApplicationController
   private
 
     def set_articles_and_videos
-      @articles = Article.all.paginate(page: params[:page], per_page: 6)
-      @videos = Video.all
+      @articles = Article.all.paginate(page: params[:page], per_page: 20)
+      @videos = Video.all.paginate(page: params[:page], per_page: 20)
     end
 
     def set_article

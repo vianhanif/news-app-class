@@ -1,2 +1,4 @@
-<h1>Pages#search</h1>
-<p>Find me in app/views/pages/search.html.erb</p>
+<h4>Searching for "<%= params[:search] %>"</h4>
+<%= render 'components/articles', articles: @articles_by_tag, by: 'tag', search: true %>
+<%= render 'components/articles', articles: @articles_by_title, by: 'title', search: true %>
+<%= render 'components/videos', videos: @videos_by_title, search: true %>

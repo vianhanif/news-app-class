@@ -1,7 +1,10 @@
-<h3>Latest Posts</h3>
+<% if !articles.empty? %>
+<% if search %>
+<h3>By <%= by.capitalize %></h3>
+<% end %>
 <div class="row">
-  <% @articles.each do |article| %>
-    <div class="col-xs-12 col-sm-4">
+  <% articles.each do |article| %>
+    <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
       <div class="thumbnail">
         <div class="article-head-image" style="background-image:    url(<%= article.image.url if !article.image.to_s.empty? %>);"></div>
         <div class="caption">
@@ -12,6 +15,9 @@
     </div>
   <% end %>
 </div>
+<% if action_name == 'news' %>
 <div class="text-center">
   <%= will_paginate @articles %>
 </div>
+<% end %>
+<% end %>
