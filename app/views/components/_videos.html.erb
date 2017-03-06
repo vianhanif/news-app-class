@@ -22,7 +22,7 @@
 </div>
 <% if action_name == 'videos' %>
 <div class="text-center">
-  <%= will_paginate @videos %>
+  <%= will_paginate @videos, inner_window: 1, outer_window: 1 %>
 </div>
 <% end %>
 <% end %>

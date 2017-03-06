@@ -19,7 +19,7 @@
 </div>
 <% if action_name == 'news' %>
 <div class="text-center">
-  <%= will_paginate @articles %>
+  <%= will_paginate @articles,inner_window: 1, outer_window: 1 %>
 </div>
 <% end %>
 <% end %>
