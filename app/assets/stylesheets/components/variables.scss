@@ -1,2 +1,10 @@
-$primary: rgb(43,43,43);
-$secondary: rgb(242,242,242);
+$primary:   rgb(223,55,55);
+$secondary: rgb(233,129,54);
+$accent:    rgb(92,92,92);
+
+$form-control-transition-start: 0px 0px 0px $accent inset, 0px 0px 0px $primary;
+$form-control-transition-end:   0px 0px 0px $accent inset, 0px 0px 0px $primary;
+$form-control-transition-style: all 0ms ease-in-out;
+
+
+$default-shadow: 0px 0px 4px rgba(shade($accent, 6%), .5);

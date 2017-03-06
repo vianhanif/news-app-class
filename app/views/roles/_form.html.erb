@@ -1,6 +1,6 @@
 <%= simple_form_for(@role) do |f| %>
   <%= render 'components/error', form: @role %>
-  <div class="panel panel-default">
+  <div class="panel  ">
     <div class="panel-heading">
       <ul class="list-inline table-heading">
         <li><label class="table-head-panel"><%= action_name.to_s.capitalize %> Role</label></li>
@@ -20,7 +20,7 @@
         <div class="col-sm-3"><%= f.input :level %></div>
       </div>
     </div>
-    <div class="panel-footer text-right">
+    <div class="panel-body text-right">
       <%= f.button :submit %>
     </div>
   </div>

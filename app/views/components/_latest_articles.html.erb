@@ -2,11 +2,13 @@
 <div class="row">
   <% @articles.each do |article| %>
     <div class="col-xs-12 col-sm-4">
-      <div class="thumbnail">
-        <div class="article-head-image" style="background-image:    url(<%= article.image.url if !article.image.to_s.empty? %>);"></div>
-        <div class="caption">
-          <h3 class="thumbnail-head"><%= article.headline.empty? ? article.content.html_safe : article.headline %></h3>
-          <!-- <p class="thumbnail-text">Pellentesque in ipsum id orci porta dapibus. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Nulla quis lorem ut libero malesuada feugiat.</p> -->
+      <div class="panel article-panel">
+        <div class="panel-body">
+          <div class="article-head-image" style="background-image:    url(<%= article.image.url if !article.image.to_s.empty? %>);"></div>
+          <div class="caption">
+            <h3 class="thumbnail-head"><%= article.headline.empty? ? article.content.html_safe : article.headline %></h3>
+            <!-- <p class="thumbnail-text">Pellentesque in ipsum id orci porta dapibus. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Nulla quis lorem ut libero malesuada feugiat.</p> -->
+          </div>
         </div>
       </div>
     </div>

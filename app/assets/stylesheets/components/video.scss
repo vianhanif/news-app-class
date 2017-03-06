@@ -4,6 +4,11 @@
   background-size:     cover;                      /* <------ */
   background-repeat:   no-repeat;
   background-position: center center;
+  background-color: tint($primary, 94%);
+  box-shadow: $default-shadow;
+  border-radius: 4px;
+  margin-bottom: 5px;
+  margin-top: 5px;
 }
 
 $font-size-text: 16px;

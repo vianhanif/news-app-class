@@ -1,6 +1,6 @@
 <%= simple_form_for(@video) do |f| %>
   <%= render 'components/error', form: @video %>
-  <div class="panel panel-default">
+  <div class="panel  ">
     <div class="panel-heading">
       <ul class="list-inline table-heading">
         <li><label class="table-head-panel"><%= action_name.to_s.capitalize %> Video</label></li>
@@ -20,7 +20,7 @@
         <div class="col-sm-6"><%= f.input :url %></div>
       </div>
     </div>
-    <div class="panel-footer text-right">
+    <div class="panel-body text-right">
       <%= f.button :submit %>
     </div>
   </div>

@@ -1,6 +1,6 @@
 <%= simple_form_for(@category) do |f| %>
   <%= render 'components/error', form: @category %>
-  <div class="panel panel-default">
+  <div class="panel  ">
     <div class="panel-heading">
       <ul class="list-inline table-heading">
         <li><label class="table-head-panel"><%= action_name.to_s.capitalize %> Category</label></li>
@@ -16,7 +16,7 @@
         <div class="col-sm-12"><%= f.input :name %></div>
       </div>
     </div>
-    <div class="panel-footer text-right">
+    <div class="panel-body text-right">
       <%= f.button :submit %>
     </div>
   </div>

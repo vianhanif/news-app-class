@@ -7,16 +7,16 @@
     margin-left: 10px;
     margin-right: 10px;
     padding: 8px;
-    color: rgb(240,240,240);
-    background-color:rgb(57,57,57);
-    box-shadow: 2px 2px 2px tint(rgba(204,204,204,.51), 80%);
+    color: tint($primary, 95%);
+    background-color: $primary;
+    box-shadow: $default-shadow;
     border-radius: 4px;
     font-weight: bold;
   }
   a,a:hover{
     @extend .current;
     text-decoration: none;
-    color: rgb(55,55,55);
+    color: $primary;
     background: none;
     box-shadow: none;
   }
