@@ -114,6 +114,8 @@
       transition: all 300ms;
       text-align: right;
       font-size: 18px;
+      color: tint($primary, 80%);
+      font-weight: 300;
       &:focus{
         background-color: shade($primary, 28%);
       }

@@ -5,6 +5,7 @@ function init_script() {
   fancybox();
   datepicker();
   chosen();
+  autocomplete();
 }
 
 if (typeof Turbolinks != 'undefined') {
