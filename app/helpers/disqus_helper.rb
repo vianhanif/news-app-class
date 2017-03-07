@@ -7,15 +7,15 @@ require 'securerandom' #SecureRandom.uuid.gsub("-", "").hex
 module DisqusHelper
 
   def disqus_host
-    Rails.env.development? ? 'news-dev' : 'news-app'
+    Rails.env.development? ? 'news-app-dev' : 'news-app-proc'
   end
 
-  def render_disqus link = nil, action, id
+  def render_disqus link = nil
     "<div id=\"disqus_thread\"></div>
       <script>
       var disqus_config = function () {
-        this.page.url = window.location.origin+\"/#{link != nil ? link : action}/#{id}\";  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = \"#{"#{link != nil ? link : action}/#{id}"}\"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.url = window.location.origin+\"/#{link}\";  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = \"/#{link}\"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
       };
       (function() { // DON'T EDIT BELOW THIS LINE
         var d = document, s = d.createElement('script');
@@ -27,8 +27,8 @@ module DisqusHelper
       <noscript>Please enable JavaScript to view the <a href=\"https://disqus.com/?ref_noscript\">comments powered by Disqus.</a></noscript>".html_safe
   end
 
-  def disqus_count action, id
-    "<span class=\"disqus-comment-count\" data-disqus-identifier=\"#{action}/#{id}\">0 Comments</span>
+  def disqus_count link
+    "<span class=\"disqus-comment-count\" data-disqus-identifier=\"/#{link}\">0 Comments</span>
     <script type=\"text/javascript\">
     window.DISQUSWIDGETS = undefined;
     $.getScript(\"http://#{disqus_host}.disqus.com/count.js\");

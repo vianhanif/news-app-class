@@ -33,7 +33,7 @@ class PagesController < ApplicationController
   end
 
   def read
-    content_for :title, @article
+    content_for :title, @article.title
   end
 
   private
