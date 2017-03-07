@@ -9,7 +9,7 @@
         <div class="panel-body">
           <div class="article-head-image" style="background-image:    url(<%= article.image.url if !article.image.to_s.empty? %>);"></div>
           <div class="caption">
-            <h3 class="thumbnail-head"><%= article.headline.empty? ? article.content.html_safe : article.headline %></h3>
+            <a href="<%= open_article article %>"><h3 class="thumbnail-head"><%= article.headline.empty? ? article.content.html_safe : article.headline %></h3></a>
             <!-- <p class="thumbnail-text">Pellentesque in ipsum id orci porta dapibus. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Nulla quis lorem ut libero malesuada feugiat.</p> -->
           </div>
         </div>

@@ -21,7 +21,7 @@ class ArticlesController < ApplicationController
       end
     end
   end
-
+  
   # GET /articles/1
   # GET /articles/1.json
   def show

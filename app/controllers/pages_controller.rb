@@ -44,6 +44,6 @@ class PagesController < ApplicationController
     end
 
     def set_article
-      @article = Article.friendly.find(params[:id])
+      @article = Article.find(params[:slug])
     end
 end

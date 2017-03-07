@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   get 'lookup', to:'pages#search'
   get 'latest_news', to: 'pages#news'
   get 'latest_videos', to: 'pages#videos'
-  get ':year/:month/:date/:id', to: 'pages#read'
+  get ':year/:month/:date/:slug', to: 'pages#read'
   get 'pick/:id', to: 'articles#pick'
   resources :videos
   resources :articles
