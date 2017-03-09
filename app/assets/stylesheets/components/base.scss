@@ -46,3 +46,9 @@ body{
 .app-container{
   min-height: 1500px;
 }
+
+.loading{
+  color: tint($primary, 70%);
+  font-size: 18px;
+  font-weight: 500;
+}

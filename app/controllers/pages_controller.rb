@@ -15,6 +15,7 @@ class PagesController < ApplicationController
         @articles_by_tag = Article.tagged_with(params[:search])
         @articles_by_title = Article.search params[:search]
         @videos_by_title = Video.search params[:search]
+        @search = true
       else
         redirect_to root_path
       end
@@ -41,6 +42,7 @@ class PagesController < ApplicationController
     def set_articles_and_videos
       @articles = Article.all.paginate(page: params[:page], per_page: 20)
       @videos = Video.all.paginate(page: params[:page], per_page: 20)
+      @search = false
     end
 
     def set_article
