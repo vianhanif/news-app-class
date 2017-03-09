@@ -1,5 +1,5 @@
 <% if !@videos.empty? %>
-<h3>Latest Videos</h3>
+<h3 class="section-heading">Latest Videos</h3>
 <div class="row">
   <div class="col-md-12">
     <div class="carousel slide berita-carousel multi-item-carousel" data-ride="carousel" data-type="multi-berita" data-interval="4000" id="carousel-partner">
@@ -13,7 +13,7 @@
                     <%
                       video_new = VideoInfo.new(video.url)
                     %>
-                    <a class="various fancybox.iframe" href="<%= video_new.embed_url || video.url %>">
+                    <a class="various fancybox.iframe" title="<%= video.title %>" href="<%= video_new.embed_url || video.url %>">
                       <div class="video-head-image" style="background-image: url('<%= video_new.thumbnail_medium || video.image %>');"></div>
                     </a>
                   </div>

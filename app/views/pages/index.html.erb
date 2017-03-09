@@ -1,14 +1,18 @@
 <div class="row">
   <div class="col-md-8">
     <%= render 'components/headlines' %>
-    <%= render 'components/latest_videos' %>
-    <%= render 'components/latest_articles' %>
+    <div class="section-container">
+      <%= render 'components/latest_videos' %>
+    </div>
+    <div class="section-container">
+      <%= render 'components/latest_articles' %>
+    </div>
   </div>
   <div class="col-md-4">
     <div class="row">
-        <%= render 'components/ad_square' %>
-        <%= render 'components/ad_square' %>
-        <%= render 'components/ad_square' %>
+      <%= render 'components/ad_square' %>
+      <%= render 'components/ad_square' %>
+      <%= render 'components/ad_square' %>
     </div>
   </div>
 </div>

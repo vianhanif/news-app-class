@@ -7,7 +7,7 @@
           <li><label class="table-head-panel">Roles</label></li>
           <% if current_user.role.admin? %>
             <li class="pull-right">
-              <%= link_to 'New Role', new_role_path, class: 'btn btn-primary' %>
+              <%= link_to 'New Role', new_role_path, class: 'btn btn-default' %>
             </li>
           <% end %>
         </ul>

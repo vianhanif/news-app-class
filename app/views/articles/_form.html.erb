@@ -7,9 +7,9 @@
         <li class="pull-right">
           <ul class="list-inline">
             <% if action_name == 'edit' %>
-             <li><%= link_to 'Show', @article, class: 'btn btn-primary' %></li>
+             <li><%= link_to 'Show', @article, class: 'btn btn-default' %></li>
              <% end %>
-            <li><%= link_to 'Back', articles_path, class: 'btn btn-primary' %></li>
+            <li><%= link_to 'Back', articles_path, class: 'btn btn-default' %></li>
           </ul>
         </li>
       </ul>
@@ -27,8 +27,7 @@
             <div class="col-sm-3">
               <%= f.association :category, selected: :category %>
             </div>
-            <div class="col-sm-4"><%= f.input :author %></div>
-            <div class="col-sm-3">
+            <div class="col-sm-4">
               <%= f.input :published, input_html: {class: 'datepicker'}, as: 'string', html5: true %>
             </div>
             <div class="col-sm-3">

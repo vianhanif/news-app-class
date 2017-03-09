@@ -11,8 +11,8 @@
             <div class="text-right">
               <ul class="list-inline">
                 <% if current_user.approve? %>
-                <li><%= link_to 'Edit', edit_article_path(@article), class: 'btn btn-primary' %></li>
-                <li><%= link_to 'Back', articles_path, class: 'btn btn-primary' %></li>
+                <li><%= link_to 'Edit', edit_article_path(@article), class: 'btn btn-default' %></li>
+                <li><%= link_to 'Back', articles_path, class: 'btn btn-default' %></li>
                 <% end %>
               </ul>
             </div>

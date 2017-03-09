@@ -1,16 +1,22 @@
 <% if !articles.empty? %>
 <% if search %>
-<h3>By <%= by.capitalize %></h3>
+<h3 class="section-heading">By <%= by.capitalize %></h3>
 <% end %>
 <div class="row">
   <% articles.each do |article| %>
     <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
-      <div class="panel article-panel">
+      <div class="panel article-panel articel-at-list">
         <div class="panel-body">
-          <div class="article-head-image" style="background-image:    url(<%= article.image.url if !article.image.to_s.empty? %>);"></div>
-          <div class="caption">
-            <a href="<%= open_article article %>"><h3 class="thumbnail-head"><%= article.headline.empty? ? article.content.html_safe : article.headline %></h3></a>
-            <!-- <p class="thumbnail-text">Pellentesque in ipsum id orci porta dapibus. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Nulla quis lorem ut libero malesuada feugiat.</p> -->
+          <div class="row">
+            <div class="col-sm-12 col-xs-5">
+              <div class="article-head-image" style="background-image:    url(<%= article.image.url if !article.image.to_s.empty? %>);"></div>
+            </div>
+            <div class="col-sm-12 col-xs-7 article-head-container">
+              <div class="caption">
+                <a href="<%= open_article article %>"><h3 class="thumbnail-head"><%= article.headline.empty? ? article.content.html_safe : article.headline %></h3></a>
+                <!-- <p class="thumbnail-text">Pellentesque in ipsum id orci porta dapibus. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Nulla quis lorem ut libero malesuada feugiat.</p> -->
+              </div>
+            </div>
           </div>
         </div>
       </div>

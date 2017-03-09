@@ -2,21 +2,27 @@
   .previous_page,
   .next_page{
     visibility: collapse;
+    display: none;
   }
   .current{
     margin-left: 10px;
     margin-right: 10px;
     padding: 8px;
-    color: tint($primary, 95%);
-    background-color: $primary;
+    background-color: shade($primary, 5%);
     box-shadow: $default-shadow;
-    border-radius: 4px;
+    border-radius: $border-radius;
     font-weight: bold;
+    color: $secondary;
   }
-  a,a:hover{
+  a{
     @extend .current;
-    text-decoration: none;
     color: $primary;
+    box-shadow: none;
+    background: none;
+  }
+  a:hover{
+    text-decoration: none;
+    color: shade($accent, 80%);
     background: none;
     box-shadow: none;
   }

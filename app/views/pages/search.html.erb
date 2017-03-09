@@ -1,4 +1,10 @@
 <h4>Searching for "<%= params[:search] %>"</h4>
-<%= render 'components/articles', articles: @articles_by_tag, by: 'tag', search: true %>
-<%= render 'components/articles', articles: @articles_by_title, by: 'title', search: true %>
-<%= render 'components/videos', videos: @videos_by_title, search: true %>
+<div class="section-container">
+  <%= render 'components/articles', articles: @articles_by_tag, by: 'tag', search: true %>
+</div>
+<div class="section-container">
+  <%= render 'components/articles', articles: @articles_by_title, by: 'title', search: true %>
+</div>
+<div class="section-container">
+  <%= render 'components/videos', videos: @videos_by_title, search: true %>
+</div>

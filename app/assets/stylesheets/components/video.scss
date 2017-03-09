@@ -4,9 +4,9 @@
   background-size:     cover;                      /* <------ */
   background-repeat:   no-repeat;
   background-position: center center;
-  background-color: tint($primary, 94%);
+  background-color: $background-default;
   box-shadow: $default-shadow;
-  border-radius: 4px;
+  border-radius: $border-radius;
   margin-bottom: 5px;
   margin-top: 5px;
 }

@@ -1,0 +1,38 @@
+.panel{
+  background-color: $secondary;
+  box-shadow: $default-shadow;
+  .panel-heading{
+    h4{
+      color: $primary;
+    }
+  }
+  .panel-body{
+    a{
+      color: $primary;
+    }
+    .form-group{
+      label{
+        color: $primary;
+      }
+      .form-control{
+        border: 1px solid $primary;
+        outline: none;
+        border-radius: $border-radius;
+      }
+    }
+  }
+}
+
+.btn-default{
+  border: 0px;
+  color: $secondary !important;
+  background-color: $primary;
+  font-weight: 400;
+  transition: all 300ms;
+  &:hover{
+    border: 0px;
+    color: $secondary;
+    background-color: $primary;
+    font-weight: 700 !important;
+  }
+}
