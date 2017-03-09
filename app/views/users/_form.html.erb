@@ -16,7 +16,9 @@
             <div class="col-sm-6">
               <%= f.input :name %>
               <%= f.input :email %>
+              <% if current_user.role.admin? %>
               <%= f.association :role, selected: :role %>
+              <% end %>
               <% if action_name == 'new' or action_name == 'create' %>
                 <%= f.input :password %>
                 <%= f.input :password_confirmation %>

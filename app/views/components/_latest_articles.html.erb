@@ -5,17 +5,19 @@
     <div class="col-xs-12 col-sm-4">
       <div class="panel article-panel articel-at-list">
         <div class="panel-body">
-          <div class="row">
-            <div class="col-sm-12 col-xs-5">
-              <div class="article-head-image" style="background-image:    url(<%= article.image.url if !article.image.to_s.empty? %>);"></div>
-            </div>
-            <div class="col-sm-12 col-xs-7 article-head-container">
-              <div class="caption">
-                <a href="<%= open_article article %>"><h3 class="thumbnail-head"><%= article.headline.empty? ? article.content.html_safe : article.headline %></h3></a>
-                <!-- <p class="thumbnail-text">Pellentesque in ipsum id orci porta dapibus. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Nulla quis lorem ut libero malesuada feugiat.</p> -->
+          <a href="<%= open_article article %>">
+            <div class="row">
+              <div class="col-sm-12 col-xs-5">
+                <div class="article-head-image" style="background-image:    url(<%= article.image.url if !article.image.to_s.empty? %>);"></div>
+              </div>
+              <div class="col-sm-12 col-xs-7 article-head-container">
+                <div class="caption">
+                  <a href="<%= open_article article %>"><h3 class="thumbnail-head"><%= article.headline.empty? ? article.content.html_safe : article.headline %></h3></a>
+                  <!-- <p class="thumbnail-text">Pellentesque in ipsum id orci porta dapibus. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Nulla quis lorem ut libero malesuada feugiat.</p> -->
+                </div>
               </div>
             </div>
-          </div>
+          </a>
         </div>
       </div>
     </div>
