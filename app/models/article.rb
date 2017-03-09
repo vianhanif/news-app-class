@@ -11,7 +11,7 @@ class Article < ApplicationRecord
   acts_as_taggable
 
   def self.search search
-    self.where('title like ?', "%#{search}%")
+    self.where('lower(title) like ?', "%#{search.downcase}%")
   end
 
   def date_published
