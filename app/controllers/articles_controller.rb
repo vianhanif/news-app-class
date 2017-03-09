@@ -1,6 +1,7 @@
 class ArticlesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_article, only: [:show, :edit, :update, :destroy, :pick]
+  before_action :check_approve!, only: [:create, :edit, :destroy]
 
   # GET /articles
   # GET /articles.json

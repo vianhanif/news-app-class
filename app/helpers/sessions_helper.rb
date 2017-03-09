@@ -28,4 +28,8 @@ module SessionsHelper
     redirect_to(users_path, notice: "You don't have access to do that") if !current_user.role.admin?
   end
 
+  def check_approve!
+    redirect_to( current_user, notice: "you still need an approvement on your account") if !current_user.approve?
+  end
+
 end

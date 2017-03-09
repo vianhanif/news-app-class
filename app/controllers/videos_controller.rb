@@ -1,4 +1,6 @@
 class VideosController < ApplicationController
+  before_action :authenticate_user!
+  before_action :check_approve!, only: [:create, :edit, :destroy]
   before_action :set_video, only: [:show, :edit, :update, :destroy]
 
   # GET /videos
