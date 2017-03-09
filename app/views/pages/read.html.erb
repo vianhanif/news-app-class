@@ -1,5 +1,14 @@
 <div class="row">
   <div class="col-md-8 col-md-offset-2">
+    <div class="article-out-header">
+      <span class="article-category"><%= @article.category.name %></span>
+      <label class="article-title"><%= @article.title %></label>
+      <% if current_user %>
+        <div class="text-right">
+          <%= link_to "Edit This", edit_article_path(@article) %>
+        </div>
+      <% end %>
+    </div>
     <div class="panel article-panel">
       <div class="panel-body article-content">
         <div class="img-main" style="background: url(<%= @article.image.url %>)">
@@ -23,6 +32,14 @@
         </div>
         <div class="article-paragraph">
           <%= @article.content.html_safe %>
+        </div>
+        <div class="article-tag">
+          <ul class="list-inline">
+            <li>Tags </li>
+            <% @article.tag_list.each do |tag| %>
+              <li><a class="tag"><%= tag %></a></li>
+            <% end %>
+          </ul>
         </div>
         <div class="article-shared">
           Share on : <%= render_shareable :static_link => true %>

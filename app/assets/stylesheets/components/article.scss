@@ -9,6 +9,65 @@
   transition: all 600ms;
 }
 
+.article-out-header{
+  margin-bottom: 20px;
+}
+
+.article-tag{
+  padding-left: 15px;
+  padding-right: 15px;
+  ul li {
+    // font-size: 3vw;
+    // @media(min-width: 768px){
+    //   font-size: 2vw;
+    // }
+    // @media(min-width: 768px){
+    //   font-size: 18px;
+    // }
+    font-size: 16px;
+    color: shade($accent, 30%);
+  }
+  ul li .tag{
+    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    box-shadow: $default-shadow;
+    background-color: $fourtrary;
+    color: $secondary;
+    border-radius: $border-radius;
+  }
+}
+
+.article-title{
+  font-size: 4vw;
+  @media(min-width: 768px){
+    font-size: 2vw;
+  }
+  @media(min-width: 768px){
+    font-size: 20px;
+  }
+  font-weight: 700;
+  color: shade($accent, 55%);
+  margin-top: 10px;
+}
+
+.article-category{
+  font-size: 3vw;
+  @media(min-width: 768px){
+    font-size: 2vw;
+  }
+  @media(min-width: 768px){
+    font-size: 18px;
+  }
+  padding: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  box-shadow: $default-shadow;
+  background-color: $trinary;
+  color: $secondary;
+  border-radius: $border-radius;
+}
+
 .articel-at-list{
   &:hover{
     cursor: pointer;
