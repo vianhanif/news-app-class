@@ -15,7 +15,9 @@
         <div class="fill-image" style="background-image:    url(<%= article.image.url if !article.image.to_s.empty? %>);"></div>
         <div class="carousel-caption">
           <div class="carousel-caption-text">
-            <%= article.title %>
+            <a href="<%= open_article article %>">
+              <%= article.title %>
+            </a>
           </div>
         </div>
       </div>

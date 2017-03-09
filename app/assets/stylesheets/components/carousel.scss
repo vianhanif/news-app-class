@@ -41,7 +41,7 @@ $font-size: 4vw;
 $line-height: 1;
 $lines-to-show: 2;
 
-.carousel-caption-text{
+.carousel-caption-text, .carousel-caption-text a{
   width: 90%;
   left: 0px;
   display: block; /* Fallback for non-webkit */
@@ -51,6 +51,7 @@ $lines-to-show: 2;
   line-height: $line-height;
   -webkit-line-clamp: $lines-to-show;
   -webkit-box-orient: vertical;
+  color: $secondary;
   overflow: hidden;
   text-overflow: ellipsis;
   @media(min-width: 768px){
