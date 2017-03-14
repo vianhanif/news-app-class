@@ -6,7 +6,7 @@ class Video < ApplicationRecord
   validates :url, presence: true
 
   def self.search search
-    self.where('lower(title) like ?', "%#{search}%")
+    self.where('lower(title) like ?', "%#{search}%").all
   end
 
 end
