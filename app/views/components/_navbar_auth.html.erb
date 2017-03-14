@@ -48,7 +48,6 @@
             <a href="<%= current_user %>" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.email %> <span class="caret"></span></a>
             <ul class="dropdown-menu">
               <li><%= link_to "Profile", admin_path %></li>
-              <li><%= link_to "Roles", roles_path %></li>
               <li><%= link_to "Log out", log_out_path, method: :delete %></li>
             </ul>
           </li>
