@@ -17,7 +17,7 @@
               <%= f.input :name %>
               <%= f.input :email %>
               <% if current_user.role.admin? %>
-              <%= f.association :role, selected: :role %>
+              <%= f.association :role, collection: Role.all, label_method: :name, value_method: :id %>
               <% end %>
               <% if action_name == 'new' or action_name == 'create' %>
                 <%= f.input :password %>
