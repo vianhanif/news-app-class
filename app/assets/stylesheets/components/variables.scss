@@ -9,6 +9,7 @@ $form-control-transition-end:   0px 0px 0px $accent inset, 0px 0px 0px $primary;
 $form-control-transition-style: all 0ms ease-in-out;
 
 $default-shadow: 0px 0px 4px rgba(shade($accent, 10%), .8);
+$default-shadow-invert: 0px 0px 4px rgba(shade($accent, 50%), .6);
 
 $border-radius: 2px;
 

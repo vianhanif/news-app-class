@@ -3,9 +3,10 @@ class Article < ApplicationRecord
   default_scope { order('published DESC, pick DESC') }
   friendly_id :title, use: [:slugged, :finders]
   belongs_to  :category
+  belongs_to  :user
   mount_base64_uploader :image, PictureUploader
   validates :title, presence: true
-  validates :author, presence: true
+  validates :user, presence: true
   validates :published, presence: true
   validates :category_id, presence: true
   acts_as_taggable
@@ -21,6 +22,14 @@ class Article < ApplicationRecord
     day = self.published.strftime("%A")
     time = self.published.strftime("%I:%M %p")
     "#{day}, #{date} #{month}, #{year}. #{time}"
+  end
+
+  def date_time
+    year = self.published.strftime("%y")
+    month = self.published.strftime("%m")
+    date = self.published.strftime("%e")
+    time = self.published.strftime("%I:%M %p")
+    "#{date}/#{month}/#{year} #{time}"
   end
 
   def tag_lists

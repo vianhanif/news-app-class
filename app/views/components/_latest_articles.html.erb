@@ -1,6 +1,6 @@
 <% if !@articles.empty? %>
 <h3 class="section-heading">Latest Posts</h3>
-<div class="row" style="min-height: 500px;">
+<div class="row" style="min-height: 550px;">
   <% @articles.each do |article| %>
     <div class="col-xs-12 col-sm-4">
       <div class="panel article-panel articel-at-list">
@@ -8,12 +8,27 @@
           <a href="<%= open_article article %>">
             <div class="row">
               <div class="col-sm-12 col-xs-5">
-                <div class="article-head-image" style="background-image:    url(<%= article.image.url if !article.image.to_s.empty? %>);"></div>
+                <div class="article-head-image" style="background-image:    url(<%= article.image.url if !article.image.to_s.empty? %>);">
+                  <div class="article-author-badge">
+                    <span class="article-author-icon" style="background-image:    url(<%= article.user.image.url if !article.user.image.to_s.empty? %>);"></span>
+                    <span class="article-author-text"><%= "#{article.user.name.split(' ').first} #{article.user.name.split(' ').last}" %></span>
+                  </div>
+                  <div class="article-badge-container">
+                    <div class="article-badge">
+                      <%= article.category.name %>
+                    </div>
+                    <div class="article-date-container">
+                      <span class="article-date-text">
+                        <%= article.date_time %>
+                      </span>
+                    </div>
+                  </div>
+                </div>
               </div>
               <div class="col-sm-12 col-xs-7 article-head-container">
                 <div class="caption">
                   <a href="<%= open_article article %>"><h3 class="thumbnail-head"><%= article.title %></h3></a>
-                  <!-- <p class="thumbnail-text">Pellentesque in ipsum id orci porta dapibus. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Nulla quis lorem ut libero malesuada feugiat.</p> -->
+                  <div class="thumbnail-text"><%= article.content.html_safe %></div>
                 </div>
               </div>
             </div>
