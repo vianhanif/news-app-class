@@ -33,7 +33,9 @@
                   <td><%= "#{article.title[0..30]}..." %></td>
                   <td><%= article.date_published %></td>
                   <% if current_user.approve? %>
-                  <td><%= link_to (!article.pick ? 'Pick' : 'Revert'), pick_path(article) %></td>
+                    <% if current_user.role.admin? %>
+                      <td><%= link_to (!article.pick ? 'Pick' : 'Revert'), pick_path(article) %></td>
+                    <% end %>
                   <td><%= link_to 'Show', open_article(article) %></td>
                   <td><%= link_to 'Edit', edit_article_path(article) %></td>
                   <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
