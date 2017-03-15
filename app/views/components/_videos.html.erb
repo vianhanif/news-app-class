@@ -1,7 +1,7 @@
 <% @videos = videos if defined? videos %>
 <% if !@videos.nil? %>
 <% if @search %>
-<% if !@videos.empty? %>
+<% if !@videos.count > 0 %>
 <h3 class="section-heading">By Videos</h3>
 <% end %>
 <div class="row">
