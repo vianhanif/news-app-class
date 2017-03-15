@@ -95,7 +95,7 @@
 
 
 .article-head-image{
-  height: 140px;
+  height: 170px;
   width: 100%;
   background-color: $background-default;
   background-size:     cover;                      /* <------ */
@@ -134,7 +134,7 @@ $line-height-head: 1.4;
 $lines-to-show-head: 2;
 
 
-$font-size-text: 12px;
+$font-size-text: 14px;
 $line-height-text: 1.3;
 $lines-to-show-text: 3;
 
@@ -312,7 +312,7 @@ $lines-to-show-text-mobile: 3;
 
 .img-big{
   width: 100%;
-  height: 350px;
+  height: 450px;
 }
 .img-main{
   @extend .img-big;

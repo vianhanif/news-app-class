@@ -1,5 +1,5 @@
 .fill-image {
-  height: 250px;
+  height: 320px;
   width: 100%;
   background-color: $background-default;
   background-size:     cover;                      /* <------ */
@@ -37,7 +37,7 @@
   border-radius: $border-radius;
 }
 
-$font-size: 4vw;
+$font-size: 4.5vw;
 $line-height: 1;
 $lines-to-show: 2;
 
