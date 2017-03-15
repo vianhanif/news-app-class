@@ -1,4 +1,4 @@
-<% @videos = videos if videos %>
+<% @videos = videos if defined? videos %>
 <% if !@videos.nil? %>
 <% if @search %>
 <h3 class="section-heading">By Videos</h3>
@@ -11,7 +11,7 @@
       <div class="col-md-4 col-sm-6 col-xs-12">
         <div class="panel article-panel articel-at-list">
           <div class="panel-body">
-            <a href="#">
+            <a href="<%= open_video video %>">
               <div class="row">
                 <div class="col-sm-12 col-xs-5">
                   <div class="article-head-image-bigger" style="background-image:    url(<%= video_new.thumbnail_medium || video.image %>);"></div>

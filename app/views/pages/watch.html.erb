@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <div class="article-out-header">
+      <label class="article-title"><%= @video.title %></label>
+      <% if current_user %>
+        <div class="text-right">
+          <%= link_to "Edit This", edit_video_path(@video) %>
+        </div>
+      <% end %>
+    </div>
+    <div class="panel article-panel">
+      <div class="panel-body article-content">
+        <%
+          video = VideoInfo.new(@video.url)
+        %>
+        <iframe width="100%" height="400px" src="<%= video.embed_url %>?&theme=light&color=white&autoplay=1&modestbranding=1&autohide=1&showinfo=0&controls=0" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <div class="panel-body article-comment">
+        <%= render_disqus(open_video(@video)) %>
+      </div>
+    </div>
+  </div>
+</div>

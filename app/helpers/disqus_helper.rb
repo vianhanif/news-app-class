@@ -7,7 +7,7 @@ require 'securerandom' #SecureRandom.uuid.gsub("-", "").hex
 module DisqusHelper
 
   def disqus_host
-    Rails.env.development? ? 'news-app-dev' : 'news-app-proc'
+    Rails.env.development? ? 'news-app-dev' : 'News App'
   end
 
   def render_disqus link = nil

@@ -1,4 +1,4 @@
-<% @articles = articles if articles %>
+<% @articles = articles if defined? articles %>
 <% if !@articles.nil? %>
 <% if @search %>
 <h3 class="section-heading">By <%= by.capitalize %></h3>

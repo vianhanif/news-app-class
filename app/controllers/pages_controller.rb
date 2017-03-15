@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
   before_action :set_articles_and_videos, only: [:news, :videos]
   before_action :set_article, only: [:read]
+  before_action :set_video, only: [:watch]
 
   def index
     @picked_articles = Article.where(pick: true).all
@@ -37,6 +38,10 @@ class PagesController < ApplicationController
     content_for :title, @article.title
   end
 
+  def watch
+    content_for :title, @video.title
+  end
+
   private
 
     def set_articles_and_videos
@@ -47,5 +52,9 @@ class PagesController < ApplicationController
 
     def set_article
       @article = Article.find(params[:slug])
+    end
+
+    def set_video
+      @video = Video.find(params[:slug])
     end
 end
