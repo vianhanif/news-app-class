@@ -7,8 +7,8 @@
         <div class="panel-body">
           <a href="<%= open_article article %>">
             <div class="row">
-              <div class="col-sm-12 col-xs-5">
-                <div class="article-head-image" style="background-image:    url(<%= article.image.url if !article.image.to_s.empty? %>);">
+              <div class="col-sm-12">
+                <div class="article-head-image article-head-image-mobile" style="background-image:    url(<%= article.image.url if !article.image.to_s.empty? %>);">
                   <div class="article-author-badge">
                     <span class="article-author-icon" style="background-image:    url(<%= article.user.image.url if !article.user.image.to_s.empty? %>);"></span>
                     <span class="article-author-text"><%= "#{article.user.name.split(' ').first} #{article.user.name.split(' ').last}" %></span>
@@ -25,7 +25,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-sm-12 col-xs-7 article-head-container">
+              <div class="col-sm-12 article-head-container">
                 <div class="caption">
                   <a href="<%= open_article article %>"><h3 class="thumbnail-head"><%= article.title %></h3></a>
                   <div class="thumbnail-text"><%= article.content.html_safe %></div>
