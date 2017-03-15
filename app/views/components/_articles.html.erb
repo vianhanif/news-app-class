@@ -1,7 +1,9 @@
 <% @articles = articles if defined? articles %>
 <% if !@articles.nil? %>
 <% if @search %>
+<% if !@articles.empty? %>
 <h3 class="section-heading">By <%= by.capitalize %></h3>
+<% end %>
 <% end %>
 <div class="row">
   <% @articles.each do |article| %>
