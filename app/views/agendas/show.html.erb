@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @agenda.title %>
+</p>
+
+<p>
+  <strong>Organizer:</strong>
+  <%= @agenda.organizer %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @agenda.image %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @agenda.location %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @agenda.date %>
+</p>
+
+<p>
+  <strong>Start:</strong>
+  <%= @agenda.start %>
+</p>
+
+<p>
+  <strong>End:</strong>
+  <%= @agenda.end %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @agenda.description %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @agenda.price %>
+</p>
+
+<p>
+  <strong>Slug:</strong>
+  <%= @agenda.slug %>
+</p>
+
+<%= link_to 'Edit', edit_agenda_path(@agenda) %> |
+<%= link_to 'Back', agendas_path %>

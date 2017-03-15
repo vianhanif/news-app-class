@@ -6,7 +6,7 @@ function init_script() {
   datepicker();
   chosen();
   autocomplete();
-  pagination();
+  timepicker();
 }
 
 if (typeof Turbolinks != 'undefined') {

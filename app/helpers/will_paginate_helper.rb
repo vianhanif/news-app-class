@@ -22,4 +22,21 @@ module WillPaginateHelper
   def js_will_paginate(collection, options = {})
     will_paginate(collection, options.merge(:renderer => WillPaginateHelper::WillPaginateJSLinkRenderer))
   end
+
+  def init_auto_paginate
+    "<script>
+      $(document).on('click', '.pagination a', function() {
+        $('.pagination').html('<span class=\"loading\">Loading...</span>');
+        console.log(this.href);
+        $.ajax({
+          url: this.href,
+          dataType: 'script',
+          error: function (xhr, ajaxOptions, thrownError) {
+            alert(xhr.responseText);
+        }
+        });
+        return false;
+      });
+    </script>".html_safe
+  end
 end

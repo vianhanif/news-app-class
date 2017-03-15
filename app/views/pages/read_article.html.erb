@@ -4,9 +4,11 @@
       <span class="article-category"><%= @article.category.name %></span>
       <label class="article-title"><%= @article.title %></label>
       <% if current_user %>
-        <div class="text-right">
-          <%= link_to "Edit This", edit_article_path(@article) %>
-        </div>
+        <% if current_user.approve? %>
+          <div class="text-right">
+            <%= link_to "Edit This", edit_article_path(@article) %>
+          </div>
+        <% end %>
       <% end %>
     </div>
     <div class="panel article-panel">

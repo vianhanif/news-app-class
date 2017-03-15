@@ -1,0 +1,57 @@
+<div class="row">
+  <div class="col-sm-12 col-sm-offset-0">
+    <%= render 'components/alert', notice: notice %>
+    <div class="panel  ">
+      <div class="panel-heading">
+        <ul class="list-inline table-heading">
+          <li><label class="table-head-panel">Agendas</label></li>
+          <li class="pull-right">
+            <%= link_to 'New Agenda', new_agenda_path, class: 'btn btn-default' %>
+          </li>
+        </ul>
+      </div>
+      <div class="panel-body">
+        <div class="table-responsive">
+          <table class="table table-hover table-condensed">
+            <thead>
+              <tr>
+                <th>Title</th>
+                <th>Organizer</th>
+                <th>Location</th>
+                <th>Date</th>
+                <th>Price</th>
+                <th colspan="3"></th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <% @agendas.each do |agenda| %>
+                <tr>
+                  <td><%= agenda.title %></td>
+                  <td><%= agenda.organizer %></td>
+                  <td><%= agenda.location %></td>
+                  <td><%= agenda.date %></td>
+                  <td><%= agenda.price == 0.0 ? 'Free' : number_to_currency(agenda.price, :unit => "Rp ") %></td>
+                  <% if current_user.approve? %>
+                  <td><%= link_to 'Show', open_agenda(agenda) %></td>
+                  <td><%= link_to 'Edit', edit_agenda_path(agenda) %></td>
+                  <td><%= link_to 'Destroy', agenda, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                  <% else %>
+                  <td><%= link_to 'Show', open_agenda(agenda) %></td>
+                  <% end %>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="text-center">
+          <%= will_paginate @agendas, inner_window: 1, outer_window: 1%>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

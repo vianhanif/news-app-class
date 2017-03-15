@@ -1,7 +1,9 @@
 class PagesController < ApplicationController
   before_action :set_articles_and_videos, only: [:news, :videos]
-  before_action :set_article, only: [:read]
+  before_action :set_article, only: [:read_article]
   before_action :set_video, only: [:watch]
+  before_action :set_agendas, only: [:agendas]
+  before_action :set_agenda, only: [:read_agenda]
 
   def index
     @picked_articles = Article.where(pick: true).all
@@ -34,12 +36,20 @@ class PagesController < ApplicationController
     content_for :title, "Latest Videos"
   end
 
-  def read
+  def read_article
     content_for :title, @article.title
   end
 
   def watch
     content_for :title, @video.title
+  end
+
+  def agendas
+    content_for :title, "Latest Agenda"
+  end
+
+  def read_agenda
+    content_for :title, @agenda.title
   end
 
   private
@@ -56,5 +66,13 @@ class PagesController < ApplicationController
 
     def set_video
       @video = Video.find(params[:slug])
+    end
+
+    def set_agendas
+      @agendas = Agenda.all
+    end
+
+    def set_agenda
+      @agenda = Agenda.find(params[:slug])
     end
 end

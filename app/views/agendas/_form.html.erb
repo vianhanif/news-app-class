@@ -1,0 +1,56 @@
+<%= simple_form_for(@agenda) do |f| %>
+  <%= render 'components/error', form: @agenda %>
+  <div class="panel  ">
+    <div class="panel-heading">
+      <ul class="list-inline table-heading">
+        <li><label class="table-head-panel"><%= action_name.to_s.capitalize %> Agenda</label></li>
+        <li class="pull-right">
+          <ul class="list-inline">
+            <% if action_name == 'edit' %>
+             <li><%= link_to 'Show', @agenda, class: 'btn btn-default' %></li>
+             <% end %>
+            <li><%= link_to 'Back', agendas_path, class: 'btn btn-default' %></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="row">
+            <%= render('components/form/input', form: f, data: @agenda.image.url || image_url('default.png'), width: 12, caption: 'Image', name: :image, type: 'image'); %>
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div class="row">
+            <div class="col-sm-12"><%= f.input :title %></div>
+            <div class="col-sm-6">
+              <%= f.input :organizer %>
+            </div>
+            <div class="col-sm-4">
+              <%= f.input :date, input_html: {class: 'datepicker'}, as: 'string', html5: true %>
+            </div>
+            <div class="col-sm-3">
+              <%= f.input :start, input_html: {class: 'timepicker'}, as: 'string', html5: true %>
+            </div>
+            <div class="col-sm-3">
+              <%= f.input :end, input_html: {class: 'timepicker'}, as: 'string', html5: true %>
+            </div>
+            <div class="col-sm-6">
+              <%= f.input :location %>
+            </div>
+            <div class="col-sm-4">
+              <%= f.input :price %>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12">
+          <%= f.input :description, as: :ckeditor, label: false, input_html: { ckeditor: { toolbar: 'maximize' } } %>
+        </div>
+      </div>
+    </div>
+    <div class="panel-body text-right">
+      <%= f.button :submit %>
+    </div>
+  </div>
+<% end %>

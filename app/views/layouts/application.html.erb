@@ -18,5 +18,6 @@
       </div>
       <%= render 'components/footer' if controller_name == 'pages' %>
     </div>
+    <%= init_auto_paginate if controller_name == 'pages' %>
   </body>
 </html>

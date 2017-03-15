@@ -10,10 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170314141846) do
+ActiveRecord::Schema.define(version: 20170315142612) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "agendas", force: :cascade do |t|
+    t.string   "title"
+    t.string   "organizer"
+    t.string   "image"
+    t.string   "location"
+    t.date     "date"
+    t.string   "start"
+    t.string   "end"
+    t.text     "description"
+    t.string   "slug"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.decimal  "price",       precision: 8, scale: 2
+    t.index ["slug"], name: "index_agendas_on_slug", unique: true, using: :btree
+  end
 
   create_table "articles", force: :cascade do |t|
     t.string   "title"
