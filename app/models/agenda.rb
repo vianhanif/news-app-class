@@ -10,4 +10,18 @@ class Agenda < ApplicationRecord
   validates :organizer, presence: true
   validates :location, presence: true
   validates :title, presence: true
+
+  def self.search search
+    self.where('lower(title) like ?', "%#{search.downcase}%")
+  end
+
+  def date_occur
+    year = self.date.strftime("%Y")
+    month = self.date.strftime("%B")
+    date = self.date.strftime("%e")
+    day = self.date.strftime("%a")
+    time = self.date.strftime("%I:%M %p")
+    "#{day}, #{date} #{month}, #{year}"
+  end
+
 end

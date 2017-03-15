@@ -1,0 +1,53 @@
+<div class="row">
+  <div class="col-md-12 col-md-offset-0">
+    <div class="article-out-header">
+      <label class="article-title"><%= @agenda.title %></label>
+      <% if current_user %>
+        <% if current_user.approve? %>
+          <div class="text-right">
+            <%= link_to "Edit This", edit_agenda_path(@agenda) %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="panel article-panel">
+          <div class="panel-body article-content">
+            <div class="img-main-no-dimmed" style="background: url(<%= @agenda.image.url %>)"></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="panel article-panel">
+          <div class="panel-body article-content">
+            <div id="map" class="agenda-map"></div>
+            <h4 class="agenda-detail-header agenda-detail-header-text">Detail</h4>
+            <div class="agenda-detail-container">
+              <div class="row">
+                <div class="col-sm-6">
+                  <p class="agenda-detail-text"><strong>Date : </strong> <%= @agenda.date_occur %></p>
+                  <p class="agenda-detail-text"><strong>Time : </strong> <%= "#{@agenda.start} - #{@agenda.end}"%></p>
+                </div>
+                <div class="col-sm-6">
+                  <p class="agenda-detail-text"><strong>Location : </strong> <span id="map-location"><%= @agenda.location %></span></p>
+                  <p class="agenda-detail-text"><strong>Price : </strong> <%= number_to_currency(@agenda.price, :unit => "Rp ") %></p>
+                </div>
+              </div>
+            </div>
+            <div class="article-paragraph agenda-paragraph">
+              <h4 class="agenda-detail-header-text">Description</h4>
+              <%= @agenda.description.html_safe %>
+            </div>
+            <div class="article-shared">
+              Share on : <%= render_shareable :static_link => true %>
+            </div>
+            <div class="panel-body article-comment">
+              <%= render_disqus(open_agenda(@agenda)) %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

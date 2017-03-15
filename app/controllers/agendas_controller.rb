@@ -2,6 +2,7 @@ class AgendasController < ApplicationController
   before_action :authenticate_user!
   before_action :set_agenda, only: [:show, :edit, :update, :destroy]
   before_action :check_approve!, only: [:create, :edit, :destroy]
+  include AgendasHelper
 
   # GET /agendas
   # GET /agendas.json
@@ -23,7 +24,7 @@ class AgendasController < ApplicationController
 
   # GET /agendas/1/edit
   def edit
-    content_for :title, @agenda
+    content_for :title, @agenda.title
   end
 
   # POST /agendas
@@ -33,7 +34,7 @@ class AgendasController < ApplicationController
 
     respond_to do |format|
       if @agenda.save
-        format.html { redirect_to agendas_path, notice: 'Agenda was successfully created.' }
+        format.html { redirect_to open_agenda(@agenda), notice: 'Agenda was successfully created.' }
         format.json { render :show, status: :created, location: @agenda }
       else
         format.html { render :new }
@@ -47,7 +48,7 @@ class AgendasController < ApplicationController
   def update
     respond_to do |format|
       if @agenda.update(agenda_params)
-        format.html { redirect_to agendas_path, notice: 'Agenda was successfully updated.' }
+        format.html { redirect_to open_agenda(@agenda), notice: 'Agenda was successfully updated.' }
         format.json { render :show, status: :ok, location: @agenda }
       else
         format.html { render :edit }

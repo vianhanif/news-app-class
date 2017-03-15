@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   get 'lookup', to:'pages#search'
   get 'latest_news', to: 'pages#news'
   get 'latest_videos', to: 'pages#videos'
-  get ':year/:month/:date/:slug', to: 'pages#read_article'
+  get 'article/:year/:month/:date/:slug', to: 'pages#read_article'
   get 'watch/:slug', to: 'pages#watch'
   get 'latest_agendas', to: 'pages#agendas'
   get 'agenda/:year/:month/:date/:slug', to: 'pages#read_agenda'

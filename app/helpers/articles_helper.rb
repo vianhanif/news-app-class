@@ -12,7 +12,7 @@ module ArticlesHelper
     year = article.published.strftime("%Y")
     month = article.published.strftime("%m")
     date = article.published.strftime("%d")
-    "/#{year}/#{month}/#{date}/#{article.slug}"
+    "/article/#{year}/#{month}/#{date}/#{article.slug}"
   end
 
   def pick_path article

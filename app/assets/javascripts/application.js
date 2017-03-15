@@ -20,7 +20,6 @@
 //= require social-share-button
 //= require cocoon
 //= require selectize
-//= require bootstrap-timepicker
 //= require ckeditor/init
 //= require_tree ./scripts
 //= require_tree .

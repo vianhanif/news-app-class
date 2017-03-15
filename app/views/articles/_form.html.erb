@@ -7,7 +7,7 @@
         <li class="pull-right">
           <ul class="list-inline">
             <% if action_name == 'edit' %>
-             <li><%= link_to 'Show', @article, class: 'btn btn-default' %></li>
+             <li><%= link_to 'Show', open_article(@article), class: 'btn btn-default' %></li>
              <% end %>
             <li><%= link_to 'Back', articles_path, class: 'btn btn-default' %></li>
           </ul>

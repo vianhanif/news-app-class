@@ -1,0 +1,43 @@
+<% @agendas = agendas if defined? agendas %>
+<% if !@agendas.nil? %>
+<% if @search %>
+<% if @agendas.count >= 1  %>
+<h3 class="section-heading">By Agenda</h3>
+<% end %>
+<% end %>
+<div class="row">
+  <% @agendas.each do |agenda| %>
+    <div class="col-sm-12">
+      <div class="panel agenda-panel">
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-xs-5">
+              <a href="<%= open_agenda agenda %>">
+                <div class="agenda-head-image" style="background-image:    url(<%= agenda.image.url if !agenda.image.to_s.empty? %>);">
+                  <div class="agenda-price-container">
+                    <span class="agenda-price"><%= number_to_currency(agenda.price, :unit => "Rp ") %></span>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-xs-7 agenda-head-container">
+              <div class="caption-agenda">
+                <a href="<%= open_agenda agenda %>"><h3 class="thumbnail-head-agenda"><%= agenda.title %></h3></a>
+                <div class="agenda-detail">
+                  <span class="agenda-date"><%= agenda.date_occur %></span> <span class="agenda-time"><%= "at #{agenda.start} - #{agenda.end}" %></span>
+                  <h5 class="agenda-location">by <span class="agenda-organizer"><%= agenda.organizer %></span> in <%= agenda.location %></h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+<% if action_name == 'agendas' %>
+<div class="text-center">
+  <%= will_paginate @agendas,inner_window: 1, outer_window: 1 %>
+</div>
+<% end %>
+<% end %>

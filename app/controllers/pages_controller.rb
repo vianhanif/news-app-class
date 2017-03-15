@@ -18,6 +18,7 @@ class PagesController < ApplicationController
         @articles_by_tag = Article.tagged_with(params[:search])
         @articles_by_title = Article.search params[:search]
         @videos_by_title = Video.search params[:search]
+        @agendas_by_title = Agenda.search params[:search]
         @search = true
       else
         redirect_to root_path
@@ -69,7 +70,7 @@ class PagesController < ApplicationController
     end
 
     def set_agendas
-      @agendas = Agenda.all
+      @agendas = Agenda.all.paginate(page: params[:page], per_page: 6)
     end
 
     def set_agenda

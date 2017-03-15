@@ -7,7 +7,7 @@
         <li class="pull-right">
           <ul class="list-inline">
             <% if action_name == 'edit' %>
-             <li><%= link_to 'Show', @agenda, class: 'btn btn-default' %></li>
+             <li><%= link_to 'Show', open_agenda(@agenda), class: 'btn btn-default' %></li>
              <% end %>
             <li><%= link_to 'Back', agendas_path, class: 'btn btn-default' %></li>
           </ul>
@@ -31,10 +31,10 @@
               <%= f.input :date, input_html: {class: 'datepicker'}, as: 'string', html5: true %>
             </div>
             <div class="col-sm-3">
-              <%= f.input :start, input_html: {class: 'timepicker'}, as: 'string', html5: true %>
+              <%= f.input :start, input_html: { value: @agenda.start || '00:00 AM'} %>
             </div>
             <div class="col-sm-3">
-              <%= f.input :end, input_html: {class: 'timepicker'}, as: 'string', html5: true %>
+              <%= f.input :end, input_html: { value: @agenda.end || '00:00 AM' } %>
             </div>
             <div class="col-sm-6">
               <%= f.input :location %>
