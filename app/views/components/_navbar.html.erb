@@ -17,7 +17,7 @@
           <li class="navbar-form-container">
             <form class="navbar-form" role="search" action="/lookup" method="get">
               <div class="form-group">
-                <input type="text" name="search" class="form-control" placeholder="Search">
+                <input type="text" name="search" class="form-control" placeholder="Search" value="<%= params[:search] if !params[:search].nil? %>">
               </div>
               <button type="submit" class="btn btn-hidden">Submit</button>
             </form>
