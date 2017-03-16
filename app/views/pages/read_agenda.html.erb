@@ -40,7 +40,7 @@
               <%= @agenda.description.html_safe %>
             </div>
             <div class="article-shared">
-              Share on : <%= render_shareable :static_link => true %>
+              Share on : <%= social_share_button_tag(@agenda.title) %> 
             </div>
             <div class="panel-body article-comment">
               <%= render_disqus(open_agenda(@agenda)) %>

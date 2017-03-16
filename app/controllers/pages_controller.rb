@@ -39,6 +39,9 @@ class PagesController < ApplicationController
 
   def read_article
     content_for :title, @article.title
+    content_for :og_title, @article.title
+    content_for :og_image_url, @article.image.url
+    content_for :og_desc, Sanitize.fragment(@article.content)
   end
 
   def watch
@@ -51,6 +54,9 @@ class PagesController < ApplicationController
 
   def read_agenda
     content_for :title, @agenda.title
+    content_for :og_title, @agenda.title
+    content_for :og_image_url, @agenda.image.url
+    content_for :og_desc, Sanitize.fragment(@agenda.description)
   end
 
   private

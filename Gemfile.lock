@@ -90,6 +90,7 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
     content_for_in_controllers (0.0.2)
+    crass (1.0.2)
     debug_inspector (0.0.2)
     devise (4.2.0)
       bcrypt (~> 3.0)
@@ -288,6 +289,8 @@ GEM
     nio4r (2.0.0)
     nokogiri (1.7.0.1)
       mini_portile2 (~> 2.1.0)
+    nokogumbo (1.4.10)
+      nokogiri
     non-stupid-digest-assets (1.0.9)
       sprockets (>= 2.0)
     oga (2.9)
@@ -361,6 +364,10 @@ GEM
     ruby-ll (2.1.2)
       ansi
       ast
+    sanitize (4.4.0)
+      crass (~> 1.0.2)
+      nokogiri (>= 1.4.4)
+      nokogumbo (~> 1.4.1)
     sass (3.4.23)
     sass-rails (5.0.6)
       railties (>= 4.0.0, < 6)
@@ -457,6 +464,7 @@ DEPENDENCIES
   rails_12factor (= 0.0.2)
   rspec-collection_matchers
   rspec-rails
+  sanitize
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   selectize-rails

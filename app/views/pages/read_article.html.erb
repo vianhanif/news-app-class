@@ -44,7 +44,8 @@
           </ul>
         </div>
         <div class="article-shared">
-          Share on : <%= render_shareable :static_link => true %>
+          Share on : <%= social_share_button_tag(@article.title) %>
+          <!-- render_shareable :static_link => true -->
         </div>
       </div>
       <div class="panel-body article-comment">
