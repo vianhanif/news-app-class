@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, only: [:index, :show]
-  before_action :authorize_only_current_user!, only: [:edit, :update, :create, :destroy]
+  before_action :authorize_only_current_user_or_admin_priviledge!, only: [:edit, :update, :create, :destroy]
   before_action :set_user, only: [:show, :edit, :update, :destroy, :approve]
 
   # GET /users

@@ -20,8 +20,8 @@ module SessionsHelper
     redirect_to log_in_path if !user_signed_in?
   end
 
-  def authorize_only_current_user!
-    redirect_to(users_path, notice: "You don't have access to do that") if params[:id].to_i != current_user.id
+  def authorize_only_current_user_or_admin_priviledge!
+    redirect_to(users_path, notice: "You don't have access to do that") if params[:id].to_i != current_user.id and !current_user.role.admin?
   end
 
   def authorize_only_admin!
