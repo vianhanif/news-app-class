@@ -8,7 +8,7 @@ class PagesController < ApplicationController
   def index
     @picked_articles = Article.where(pick: true).all
     @articles = Article.all.paginate(page: params[:page], per_page: 6)
-    @videos = Video.all
+    @videos = Video.last(10)
     content_for :title, "News and Videos"
   end
 
