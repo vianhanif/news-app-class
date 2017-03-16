@@ -17,7 +17,7 @@
               <tr>
                 <th>Title</th>
                 <% if current_user.approve? %>
-                <th colspan="2"></th>
+                <th colspan="3"></th>
                 <% end %>
               </tr>
             </thead>
@@ -34,6 +34,7 @@
                     </a>
                   </td>
                   <% if current_user.approve? %>
+                  <td><%= link_to 'Show', open_video(video) %></td>
                   <td><%= link_to 'Edit', edit_video_path(video) %></td>
                   <td><%= link_to 'Destroy', video, method: :delete, data: { confirm: 'Are you sure?' } %></td>
                   <% end %>
