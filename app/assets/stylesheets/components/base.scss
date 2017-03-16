@@ -22,7 +22,8 @@ a{
 }
 
 body{
-  background: tint($primary, 97%);
+  // background: tint($primary, 97%);
+  background: #fffaf0;
 }
 .section-heading{
   color: shade($accent, 5%);
