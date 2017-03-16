@@ -6,7 +6,6 @@ function init_script() {
   datepicker();
   chosen();
   autocomplete();
-  timepicker();
 }
 
 if (typeof Turbolinks != 'undefined') {
