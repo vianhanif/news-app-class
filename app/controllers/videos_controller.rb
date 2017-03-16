@@ -33,7 +33,7 @@ class VideosController < ApplicationController
     @video = Video.new(video_params)
     if !@video.url.empty?
       url = VideoInfo.new @video.url
-      @video.image = url.thumbnail_small
+      @video.image = url.thumbnail_large
     end
     respond_to do |format|
       if @video.save
