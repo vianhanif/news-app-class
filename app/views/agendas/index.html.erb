@@ -19,7 +19,7 @@
                 <th>Organizer</th>
                 <th>Location</th>
                 <th>Date</th>
-                <th>Price</th>
+                <!-- <th>Price</th> -->
                 <th colspan="3"></th>
               </tr>
             </thead>
@@ -31,7 +31,7 @@
                   <td><%= agenda.organizer %></td>
                   <td><%= agenda.location %></td>
                   <td><%= agenda.date %></td>
-                  <td><%= agenda.price == 0.0 ? 'Free' : number_to_currency(agenda.price, :unit => "Rp ") %></td>
+                  <!-- <td><%= agenda.price == 0.0 ? 'Free' : number_to_currency(agenda.price, :unit => "Rp ") %></td> -->
                   <% if current_user.approve? %>
                   <td><%= link_to 'Show', open_agenda(agenda) %></td>
                   <td><%= link_to 'Edit', edit_agenda_path(agenda) %></td>

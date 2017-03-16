@@ -31,7 +31,8 @@
                 </div>
                 <div class="col-sm-6">
                   <p class="agenda-detail-text"><strong>Location : </strong> <span id="map-location"><%= @agenda.location %></span></p>
-                  <p class="agenda-detail-text"><strong>Price : </strong> <%= number_to_currency(@agenda.price, :unit => "Rp ") %></p>
+                  <p class="agenda-detail-text"><strong>Organizer : </strong> <%= @agenda.organizer %></span></p>
+                  <!-- <p class="agenda-detail-text"><strong>Price : </strong> <%= number_to_currency(@agenda.price, :unit => "Rp ") %></p> -->
                 </div>
               </div>
             </div>
@@ -40,7 +41,7 @@
               <%= @agenda.description.html_safe %>
             </div>
             <div class="article-shared">
-              Share on : <%= social_share_button_tag(@agenda.title) %> 
+              Share on : <%= social_share_button_tag(@agenda.title) %>
             </div>
             <div class="panel-body article-comment">
               <%= render_disqus(open_agenda(@agenda)) %>
