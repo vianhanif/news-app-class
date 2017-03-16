@@ -19,4 +19,8 @@ module ArticlesHelper
     "pick/#{article.id}"
   end
 
+  def tag_search tag
+    "/lookup?search=#{tag}"
+  end
+
 end

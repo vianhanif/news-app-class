@@ -39,7 +39,7 @@
           <ul class="list-inline">
             <li>Tags </li>
             <% @article.tag_list.each do |tag| %>
-              <li><a class="tag"><%= tag %></a></li>
+              <li><a class="tag" href="<%= tag_search(tag)%>"><%= tag %></a></li>
             <% end %>
           </ul>
         </div>
