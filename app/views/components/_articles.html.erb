@@ -5,7 +5,7 @@
 <h3 class="section-heading">By <%= by.capitalize %></h3>
 <% end %>
 <% end %>
-<div class="row">
+<div class="row" style="min-height: <%= action_name == 'news' ? '630px;' : '0px;' %>">
   <% @articles.each do |article| %>
     <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
       <div class="panel article-panel articel-at-list">

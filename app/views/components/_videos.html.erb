@@ -5,7 +5,7 @@
 <h3 class="section-heading">By Videos</h3>
 <% end %>
 <% end %>
-<div class="row">
+<div class="row" style="min-height: <%= action_name == 'news' ? '630px;' : '0px;' %>">
   <% @videos.each do |video| %>
       <%
         video_new = VideoInfo.new(video.url)

@@ -56,9 +56,8 @@ class PagesController < ApplicationController
   private
 
     def set_articles_and_videos
-      @articles = Article.all.paginate(page: params[:page], per_page: 20)
-      @videos = Video.all.paginate(page: params[:page], per_page: 20)
-      @search = false
+      @articles = Article.all.paginate(page: params[:page], per_page: 8)
+      @videos = Video.all.paginate(page: params[:page], per_page: 6)
     end
 
     def set_article
