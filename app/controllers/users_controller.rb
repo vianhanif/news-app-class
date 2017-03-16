@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, only: [:index, :show]
   before_action :authorize_only_current_user_or_admin_priviledge!, only: [:edit, :update, :create, :destroy]
-  before_action :set_user, only: [:show, :edit, :update, :destroy, :approve]
+  before_action :set_user, only: [:edit, :update, :destroy, :approve]
+  before_action :set_current_user, only: [:show]
 
   # GET /users
   # GET /users.json
@@ -106,6 +107,10 @@ class UsersController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_user
       @user = User.find(params[:id])
+    end
+
+    def set_current_user
+      @user = User.find(current_user.id)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
