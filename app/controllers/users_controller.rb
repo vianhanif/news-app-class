@@ -13,10 +13,12 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @users = User.where("id != ? ", current_user.id).all.paginate(page: params[:page], per_page: 20)
+    content_for :title, @user.name
   end
 
   def sign_up
     @user = User.new
+    content_for :title, "Sign Up"
   end
 
   def approve
@@ -51,10 +53,12 @@ class UsersController < ApplicationController
   # GET /users/new
   def new
     @user = User.new
+    content_for :title, "New User"
   end
 
   # GET /users/1/edit
   def edit
+    content_for :title, @user.name
   end
 
   # POST /users
