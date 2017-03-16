@@ -45,6 +45,9 @@
         <li><%= link_to "Donates", "#" %></li>
         <li><%= link_to "Agenda", latest_agendas_path %></li>
         <li><%= link_to "About", "#" %></li>
+        <% if current_user %>
+          <li class="menu-signed"><%= link_to "Admin", admin_path %></li>
+        <% end %>
       </ul>
     </div>
   </div>
