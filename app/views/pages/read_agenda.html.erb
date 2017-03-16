@@ -26,12 +26,12 @@
             <div class="agenda-detail-container">
               <div class="row">
                 <div class="col-sm-6">
-                  <p class="agenda-detail-text"><strong>Date : </strong> <%= @agenda.date_occur %></p>
-                  <p class="agenda-detail-text"><strong>Time : </strong> <%= "#{@agenda.start} - #{@agenda.end}"%></p>
+                  <p class="agenda-detail-text"><strong>Organizer : </strong> <%= @agenda.organizer %></span></p>
+                  <p class="agenda-detail-text"><strong>Location : </strong> <span id="map-location"><%= @agenda.location %></span></p>
                 </div>
                 <div class="col-sm-6">
-                  <p class="agenda-detail-text"><strong>Location : </strong> <span id="map-location"><%= @agenda.location %></span></p>
-                  <p class="agenda-detail-text"><strong>Organizer : </strong> <%= @agenda.organizer %></span></p>
+                  <p class="agenda-detail-text"><strong>Date : </strong> <%= @agenda.date_occur %></p>
+                  <p class="agenda-detail-text"><strong>Time : </strong> <%= "#{@agenda.start} - #{@agenda.end}"%></p>
                   <!-- <p class="agenda-detail-text"><strong>Price : </strong> <%= number_to_currency(@agenda.price, :unit => "Rp ") %></p> -->
                 </div>
               </div>
