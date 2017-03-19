@@ -6,8 +6,8 @@ class PagesController < ApplicationController
   before_action :set_agenda, only: [:read_agenda]
 
   def index
-    @picked_articles = Article.where(pick: true).all
-    @articles = Article.all.paginate(page: params[:page], per_page: 6)
+    @picked_articles = Article.where("pick = ? and published <= ?", "True", Date.today).all
+    @articles = Article.where("published <= ?", Date.today).all.paginate(page: params[:page], per_page: 6)
     @videos = Video.last(10)
     content_for :title, "News and Videos"
   end
@@ -62,7 +62,7 @@ class PagesController < ApplicationController
   private
 
     def set_articles_and_videos
-      @articles = Article.all.paginate(page: params[:page], per_page: 8)
+      @articles = Article.where("published <= ?", Date.today).all.paginate(page: params[:page], per_page: 8)
       @videos = Video.all.paginate(page: params[:page], per_page: 6)
     end
 
