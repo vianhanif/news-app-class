@@ -54,3 +54,10 @@ body{
   font-size: 18px;
   font-weight: 500;
 }
+
+.about-container {
+  background-color: tint($secondary, 5%);
+  padding: 10px;
+  border-radius: 4px;
+  box-shadow: $default-shadow;
+}
