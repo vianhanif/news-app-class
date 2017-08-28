@@ -29,6 +29,10 @@ class PagesController < ApplicationController
     end
   end
 
+  def about
+    content_for :title, "About"
+  end
+
   def news
     content_for :title, "Latest News"
   end

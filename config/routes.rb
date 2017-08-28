@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   mount Ckeditor::Engine => '/ckeditor'
   root to: 'pages#index'
+  get 'about', to: 'pages#about'
   get 'lookup', to:'pages#search'
   get 'latest_news', to: 'pages#news'
   get 'latest_videos', to: 'pages#videos'
