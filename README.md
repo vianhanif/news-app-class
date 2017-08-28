@@ -1,24 +1,14 @@
-# README
+# Project Title
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Web-article INSPIVASI
 
-Things you may want to cover:
+## Project Team
 
-* Ruby version
+* Hasanuddin Djamil (Project Manager)
+* Alvian Rahman Hanif (Back-end Developer)
+* Nur Prillianti Kusuma Dewi (Front-end Developer)
 
-* System dependencies
+## Built With
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Programming language: Ruby
+* Database: PostgreSQL
