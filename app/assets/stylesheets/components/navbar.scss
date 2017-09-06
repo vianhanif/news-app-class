@@ -184,3 +184,29 @@ background:none !important;
 .menu-signed{
   background-color: shade($primary, 20%);
 }
+
+.navbar-menu--right {
+  @extend .navbar-menu;
+  li{
+    background-color: $secondary;
+    font-weight: 600;
+    font-size: 18px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    a{
+        color: $primary;
+        transition: all 300ms;
+      &:hover{
+        color: $primary;
+      }
+      &:hover,&:focus,&:active{
+        background: none;
+      }
+    }
+  }
+  .divider {
+    a {
+      border-left: 1px solid $primary;
+    }
+  }
+}

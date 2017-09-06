@@ -1,0 +1,15 @@
+.kontribusi-header {
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 30px;
+  margin-bottom: 40px;
+  span {
+    font-size: 30px;
+  }
+}
+
+.kontribusi-content {
+  padding-left: 15px;
+  padding-right: 15px;
+  color: shade($accent, 90%) !important;
+}

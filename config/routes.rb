@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
   root to: 'pages#index'
   get 'about', to: 'pages#about'
+  get 'kontribusi', to: 'pages#kontribusi'
   get 'lookup', to:'pages#search'
   get 'latest_news', to: 'pages#news'
   get 'latest_videos', to: 'pages#videos'

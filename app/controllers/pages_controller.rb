@@ -33,6 +33,10 @@ class PagesController < ApplicationController
     content_for :title, "About"
   end
 
+  def kontribusi
+    content_for :title, "Ayo Kontribusi!"
+  end
+
   def news
     content_for :title, "Latest News"
   end

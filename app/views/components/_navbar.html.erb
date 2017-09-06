@@ -54,6 +54,12 @@
           </li>
         <% end %>
       </ul>
+      <% if !user_signed_in? %>
+        <ul class="nav navbar-nav navbar-right text-center navbar-menu--right">
+          <li><%= link_to "Ayo Kontribusi!", kontribusi_path %></li>
+          <li class="divider"><%= link_to "Login", admin_path %></li>
+        </ul>
+      <% end %>
     </div>
   </div>
 </nav>
