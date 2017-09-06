@@ -34,7 +34,7 @@ Metode yang digunakan dalam pengembangan aplikasi ini adalah dengan menggunakan 
 Tools atau alat bantu yang digunakan dalam pembuatan website adalah sebagai berikut :
 * Bahasa pemrograman Ruby
  
- Ruby adalah bahasa pemrograman dinamis berbasis skrip yang berorientasi obyek. Tujuan dari ruby adalah menggabungkan kelebihan dari semua bahasa-bahasa pemrograman skrip yang ada di dunia. Ruby ditulis dengan bahasa pemrograman C dengan kemampuan dasar seperti Perl dan Python.
+  Ruby adalah bahasa pemrograman dinamis berbasis skrip yang berorientasi obyek. Tujuan dari ruby adalah menggabungkan kelebihan dari semua bahasa-bahasa pemrograman skrip yang ada di dunia. Ruby ditulis dengan bahasa pemrograman C dengan kemampuan dasar seperti Perl dan Python.
 * PostgreSQL
   
   PostgreSQL atau sering disebut Postgres merupakan salah satu dari sejumlah database besar yang menawarkan skalabilitas, keluwesan, dan kinerja yang tinggi. Penggunaannya begitu meluas di berbagai platform dan didukung oleh banyak bahasa pemrograman.
