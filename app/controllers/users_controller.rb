@@ -18,8 +18,12 @@ class UsersController < ApplicationController
   end
 
   def sign_up
-    @user = User.new
-    content_for :title, "Sign Up"
+    if !user_signed_in?
+      @user = User.new
+      content_for :title, "Sign Up"
+    else
+      redirect_to current_user
+    end
   end
 
   def approve
